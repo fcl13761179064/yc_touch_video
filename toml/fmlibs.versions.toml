@@ -1,0 +1,183 @@
+[versions]
+targetSdk = "33"
+compileSdk = "33"
+minSdk = "23"
+
+annotation = "1.6.0"
+multidex = "2.0.1"
+androidGradlePlugin = "8.0.0"
+core-ktx = "1.9.0"
+appcompat = "1.6.1"
+material = "1.7.0"
+constraintlayout = "2.1.4"
+testExtJunit = "1.1.5"
+espresso-core = "3.5.1"
+activity-ktx = "1.7.0"
+junit = "4.13.2"
+fragment-ktx = "1.5.6"
+gson = "2.10.1"
+lifecycle = "2.6.1"
+kotlin = "1.7.20"
+coroutines = "1.6.4"
+coil = "1.1.0"
+mmkv = "1.3.0"
+flowEventBus = "1.0.1.220719"
+okhttp3 = "5.0.0-alpha.11"
+retrofit_version = "2.9.0"
+retrofit = "2.9.0"
+autoService = "1.1.1"
+quikAdapter = "3.0.4"
+xlog = "1.3.0"
+immersionbar = "3.2.2"
+theRouter = "1.2.0-rc1"
+viewbindingpropertydelegate = "1.5.9"
+permissionx = "1.7.1"
+liteAvSdkProfessional = "11.3.0.13200"
+toast = "12.3"
+indicator = "1.7.0"
+blankversion = "1.30.6"
+smartRefreshLayout = "2.0.5"
+viewAdapterHelper = "3.0.4"
+rxAndroid_version = "1.2.1"
+android_autoSize_vf = "v1.2.1"
+nav_version = "2.5.3"
+android_crash_version="1.5.0"
+websocket_version="1.5.6"
+zxing_version="3.3.3"
+retrofitmanager_version="1.4.0"
+arouter_version="1.5.2"
+
+
+
+
+
+#    api 'me.jessyan:retrofit-url-manager:1.4.0'
+#com.guolindev.permissionx:permissionx:1.7.1
+
+[libraries]
+#androidx.multidex:multidex:2.0.1 主要解决项目的应用及其引用的库超过 65,536 个方法，构建失败的问题
+androidx-multidex = { group = "androidx.multidex", name = "multidex", version.ref = "multidex" }
+#安卓项目中排除某插件依赖
+#implementation('androidx.annotation:annotation:1.2.0') {
+#    exclude group: 'androidx.annotation'
+#}
+androidx-annotation = { group = "androidx.annotation", name = "annotation", version.ref = "annotation" }
+#core-ktx库中graphics包下提供的关于View绘制、Bitmap、Rect、Color等操作的一系列扩展API
+core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
+#是一个提供可扩展的Action Bar  实现UI风格
+appcompat-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+#提供了许多丰富的UI控件  MaterialButton
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+#约束布局
+constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+#单元测试
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+#Android自动化测试插件
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
+#测试相关的
+androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "testExtJunit" }
+
+#Android Jetpack 之 Activity 扩展类 ViewModel 对象的创建
+activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activity-ktx" }
+fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragment-ktx" }
+google-gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+
+#viewbinding
+viewbinding_full = { group = "com.github.kirich1409", name = "viewbindingpropertydelegate-full", version.ref = "viewbindingpropertydelegate" }
+viewbinding-noreflection = { group = "com.github.kirich1409", name = "viewbindingpropertydelegate-noreflection", version.ref = "viewbindingpropertydelegate" }
+
+#blankj工具类
+blankj = {group ="com.blankj",name="utilcodex",version.ref="blankversion"}
+
+lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+lifecycle-common = { group = "androidx.lifecycle", name = "lifecycle-common", version.ref = "lifecycle" }
+lifecycle-viewmodel-savedstate = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-savedstate", version.ref = "lifecycle" }
+lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle" }
+
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+
+kotlin-coil = { group = "io.coil-kt", name = "coil", version.ref = "coil" }
+kotlin-coil-gif = { group = "io.coil-kt", name = "coil-gif", version.ref = "coil" }
+kotlin-coil-svg = { group = "io.coil-kt", name = "coil-svg", version.ref = "coil" }
+kotlin-coil-video = { group = "io.coil-kt", name = "coil-video", version.ref = "coil" }
+
+#路由
+#therouter-router = { group = "cn.therouter", name = "router", version.ref = "theRouter" }
+#therouter-apt = { group = "cn.therouter", name = "apt", version.ref = "theRouter" }
+
+#沉浸式框架
+immersionbar-lib = { group = "com.geyifeng.immersionbar", name = "immersionbar", version.ref = "immersionbar" }
+immersionbar-ktx = { group = "com.geyifeng.immersionbar", name = "immersionbar-ktx", version.ref = "immersionbar" }
+#net
+okhttp3-okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp3" }
+okhttp3-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp3" }
+retrofit2-retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+rxjava ={group="com.squareup.retrofit2",name="adapter-rxjava",version.ref="retrofit_version"}
+rxAndroid ={group="io.reactivex",name="rxandroid",version.ref="rxAndroid_version"}
+retrofit2-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
+#implementation 'com.github.JessYanCoding:AndroidAutoSize:v1.2.1'
+android-auto = { group = "com.github.JessYanCoding", name = "AndroidAutoSize", version.ref = "android_autoSize_vf" }
+navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "nav_version" }
+navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "nav_version" }
+####android 捕获本地crash的
+android-crash = { group = "cat.ereza", name = "customactivityoncrash", version.ref = "android_crash_version" }
+##### websocket 长连接 'org.java-websocket:Java-WebSocket:1.5.1'
+android-websocket= { group = "org.java-websocket", name = "Java-WebSocket", version.ref = "websocket_version" }
+########"com.google.zxing:core:$versions.zxing"
+google-zxing= { group = "com.google.zxing", name = "core", version.ref = "zxing_version" }
+###'me.jessyan:retrofit-url-manager:1.4.0'
+android-retrofitmanager= { group = "me.jessyan", name = "retrofit-url-manager", version.ref = "retrofitmanager_version" }
+
+
+
+
+
+##### deps.easypermissions = "pub.devrel:easypermissions:$versions.easypermissions"
+# android-permission= { group = "pub.devrel", name = "easypermissions", version.ref = "easypermissions_version" }
+
+#cat.ereza:customactivityoncrash
+# Kotlin
+# api "androidx.navigation:navigation-fragment-ktx:$nav_version"
+# api "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+#第三方工具-----
+#本地存储工具
+mmkv-static = { group = "com.tencent", name = "mmkv-static", version.ref = "mmkv" }
+#indicator
+indicator = {group = "com.github.hackware1993",name = "MagicIndicator",version.ref = "indicator"}
+#下拉刷新
+#smartRefreshLayout-class = { group = "io.github.scwang90", name ="header-classics",  version.ref = "smartRefreshLayout" }
+#smartRefreshLayout-kernel = { group = "io.github.scwang90", name ="refresh-layout-kernel",  version.ref = "smartRefreshLayout" }
+#smartRefreshLayout-material = { group = "io.github.scwang90", name ="refresh-header-material",  version.ref = "smartRefreshLayout" }
+#viewAdapterHelper= { group = "com.github.CymChad", name ="BaseRecyclerViewAdapterHelper",   version.ref = "viewAdapterHelper" }
+
+#全面k哥第三方库
+
+
+
+
+
+[bundles]
+android-base = ["core-ktx", "appcompat-appcompat", "material", "constraintlayout", "activity-ktx", "fragment-ktx", "google-gson", "androidx-multidex",
+    "androidx-annotation","blankj","navigation-fragment-ktx","navigation-ui-ktx"]
+androidx-lifecycle = ["lifecycle-viewmodel-ktx", "lifecycle-viewmodel-savedstate", "lifecycle-runtime-ktx", "lifecycle-livedata-ktx", "lifecycle-common"]
+kotlin-coroutines = ["kotlinx-coroutines-core", "kotlinx-coroutines-android"]
+kotlin-coil = ["kotlin-coil", "kotlin-coil-gif", "kotlin-coil-svg", "kotlin-coil-video"]
+test-junit = ["junit"]
+android-test = ["androidx-test-ext-junit", "espresso-core"]
+immersionbar = ["immersionbar-lib", "immersionbar-ktx"]
+network_fm= ["okhttp3-okhttp", "okhttp3-logging-interceptor", "retrofit2-retrofit", "retrofit2-converter-gson","rxjava","rxAndroid","android-auto"]
+viewbinding = ["viewbinding_full", "viewbinding-noreflection"]
+#smartRefreshLayout-tool =["smartRefreshLayout-class","smartRefreshLayout-kernel","smartRefreshLayout-material","viewAdapterHelper"]
+
+
+
+[plugins]
+#在为plugins代码块目录条目设置格式时建议使用kebab case（例如android-application），以便在build文件中获得更好的代码补全帮助
+android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+therouter-plugin = { id = "cn.therouter", version.ref = "theRouter" }
+arouter-plugin = { id = "com.alibaba:arouter-register", version.ref = "arouter_version" }

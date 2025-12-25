@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/fm_dp_162"
+    android:layout_height="match_parent"
+    tools:background="@color/black">
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/search_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fm_dp_28"
+        android:drawableLeft="@mipmap/img_search_box"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/fm_dp_10"
+        android:drawablePadding="@dimen/fm_dp_5"
+        android:hint="支持首拼与全拼"
+        android:fontFamily="@font/yc_font"
+        android:textColorHint="@color/fm_color_ffc64eff"
+        android:background="@drawable/app_bg_search_box"
+        android:textColor="@color/white"
+        android:textSize="@dimen/fm_text_size_10"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/at_delete_all"
+        android:layout_width="@dimen/fm_dp_80"
+        android:layout_height="@dimen/fm_dp_23"
+        android:drawableLeft="@mipmap/btn_delect_all_img"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/fm_dp_18"
+        android:drawablePadding="@dimen/fm_dp_4"
+        android:text="清空"
+        android:fontFamily="@font/yc_font"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/search_text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:textColor="@color/fm_ccffffff"
+        android:textSize="@dimen/fm_text_size_10"
+        />
+
+     <View
+         android:layout_width="1dp"
+         android:layout_height="@dimen/fm_dp_10"
+         android:background="@color/fm_1AFFFFFF"
+         app:layout_constraintTop_toTopOf="@+id/at_delete_all"
+         app:layout_constraintBottom_toBottomOf="@+id/at_delete_all"
+         app:layout_constraintLeft_toRightOf="@+id/at_delete_all"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/at_delete_one"
+        android:layout_width="@dimen/fm_dp_80"
+        android:layout_height="@dimen/fm_dp_23"
+        android:drawableLeft="@mipmap/btn_delect_one_img"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/fm_dp_18"
+        android:drawablePadding="@dimen/fm_dp_5"
+        android:text="退格"
+        android:fontFamily="@font/yc_font"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/search_text"
+        android:textColor="@color/white"
+        android:textSize="@dimen/fm_text_size_10"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/fm_dp_9"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/at_delete_all"
+        app:spanCount="4"
+        tools:itemCount="20"
+        tools:listitem="@layout/adapter_keybord_box" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_handwriting"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fm_dp_28"
+        android:background="@drawable/selector_handwriting_bg"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:fontFamily="@font/yc_font"
+        android:textColor="@color/fm_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="@dimen/fm_dp_15"
+        android:text="开启手写"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

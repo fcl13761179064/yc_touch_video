@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/at_hand_write"
+    android:layout_width="@dimen/fm_dp_45"
+    android:layout_height="@dimen/fm_dp_45"
+    android:textColor="@color/white"
+    android:textSize="15sp"
+    android:text="你"
+    android:gravity="center"
+    android:background="@drawable/adapter_bg_song_order_item"
+   />
+

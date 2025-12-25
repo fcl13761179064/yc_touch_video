@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- 主题样式 -->
+    <!-- Base application theme. -->
+    <style name="fm_app_theme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <!--强制横屏-->
+        <item name="android:screenOrientation">landscape</item>
+        <!--背景色-->
+        <item name="android:windowBackground">@color/fm_white</item>
+        <item name="android:configChanges">orientation|keyboardHidden|screenSize</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+
+    <!--启动页主题-->
+    <!--activityOpenEnterAnimation：新Activity入栈时新Activity的入场动画
+    activityOpenExitAnimation：新Activity入栈时旧Activity的退场动画
+    activityCloseEnterAnimation：顶部Activity出栈时下面Activity的入场动画
+    activityCloseExitAnimation：顶部Activity出栈时它的退场动画
+     windowEnterAnimation用于修饰dialog动画-->
+    <style name="fm_splashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:screenOrientation">landscape</item>
+        <item name="android:windowBackground">@mipmap/bg_splash_logo</item>
+    </style>
+
+
+    <style name="fm_window_null_thmem" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:screenOrientation">landscape</item>
+        <!--背景色-->
+        <item name="android:windowBackground">@null</item>
+    </style>
+
+    <!-- 主题样式 -->
+    <!-- Base application theme. -->
+    <style name="fm_main_theme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--强制横屏-->
+        <item name="android:screenOrientation">locked</item>
+        <item name="android:configChanges">orientation|keyboardHidden|screenSize</item>
+        <item name="android:windowEnterAnimation">@anim/fm_anim_center_in</item>
+        <item name="android:windowExitAnimation">@anim/fm_anim_center_out</item>
+    </style>
+
+
+
+    <style name="fm_loading_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item><!--Dialog的windowFrame框为无 -->
+        <item name="android:windowIsFloating">true</item><!-- 是否漂现在activity上 -->
+        <item name="android:windowIsTranslucent">true</item><!-- 是否半透明 -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent
+        </item><!--  去除黑色边框的关键设置项 -->
+        <item name="android:backgroundDimEnabled">true</item><!--屏幕背景是否变暗-->
+        <item name="android:backgroundDimAmount">0</item>
+    </style>
+
+    <!-- BaseBottomDialog 样式 -->
+    <style name="fm_baseDialog" parent="@android:style/Animation.Dialog">
+        <item name="android:windowFrame">@null</item><!--边框-->
+        <item name="android:windowIsFloating">true</item> <!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">true</item><!--半透明-->
+        <item name="android:windowNoTitle">true</item><!--无标题-->
+        <!-- 设置背景色 透明-->
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 设置是否显示背景 -->
+        <item name="android:backgroundDimEnabled">true</item> <!--模糊-->
+        <item name="android:backgroundDimAmount">0.8</item>  <!--模糊到0.6-->
+        <!-- 设置点击空白消失 -->
+        <item name="android:windowCloseOnTouchOutside">true</item>
+    </style>
+
+
+
+    <!-- dialog 的AnimBottom 底部动画 -->
+    <style name="fm_animBottom" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/fm_dialog_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/fm_dialog_bottom_out</item>
+
+    </style>
+
+
+    <style name="fm_matchWidthDialog" parent="@style/Theme.AppCompat.Dialog">
+        <item name="android:windowCloseOnTouchOutside">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+
+    <style name="fm_transparent" parent="@style/Theme.AppCompat.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+
+    <!--自定义common toolbar的style-->
+
+    <!--自定义common toolbar的字体-->
+    <style name="fm_common_text">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/fm_color_333333</item>
+    </style>
+
+    <style name="fm_text_nomal">
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="fm_text_bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!--自定义common toolbar的字体-->
+    <style name="fm_left_text">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/fm_color_333333</item>
+    </style>
+
+
+    <!--通用弹窗样式-->
+    <style name="fm_CommonDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="windowNoTitle">true</item>
+        <item name="background">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+        <item name="android:backgroundDimAmount">0.5</item>
+    </style>
+
+
+    <!--ShapeableImageView 圆 -->
+    <style name="fm_CircleStyle">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+    <!--ShapeableImageView 圆 -->
+    <style name="fm_CircleStyle_5">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">5dp</item>
+    </style>
+    <!--ShapeableImageView 圆 -->
+    <style name="fm_CircleStyle_5.5">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">5.5dp</item>
+    </style>
+
+
+    <!--ShapeableImageView 圆 -->
+    <style name="fm_CircleStyle_14">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">14dp</item>
+    </style>
+
+    <!--ShapeableImageView 圆 -->
+    <style name="fm_CircleStyle_12">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+
+    <!--ShapeableImageView 圆 -->
+    <style name="fm_CircleStyle_25">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">25dp</item>
+    </style>
+
+    <!--右边菜单栏圆角-->
+    <style name="fm_shape_right_menu_dialog">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">15dp</item>
+        <item name="cornerSizeBottomLeft">15dp</item>
+    </style>
+
+    <!-- 中间出入动画 -->
+    <style name="fm_animCenter" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/fm_anim_center_in</item>
+        <item name="android:windowExitAnimation">@anim/fm_anim_center_out</item>
+    </style>
+    <!-- 右边出入动画 -->
+    <style name="fm_animRight" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/fm_slide_right_in</item>
+        <item name="android:windowExitAnimation">@anim/fm_slide_right_out</item>
+    </style>
+</resources>

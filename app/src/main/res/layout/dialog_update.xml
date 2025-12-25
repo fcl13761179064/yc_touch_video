@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/all_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true">
+
+    <View
+        android:id="@+id/bg_view"
+        android:layout_width="@dimen/fm_dp_375"
+        android:layout_height="@dimen/fm_dp_239"
+        android:background="@drawable/fm_shape_all_success_radius_15"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/fm_dp_21.5"
+        android:text="版本更新"
+        android:textColor="@color/white"
+        android:textSize="@dimen/fm_text_size_16"
+        app:layout_constraintEnd_toEndOf="@id/bg_view"
+        app:layout_constraintStart_toStartOf="@id/bg_view"
+        app:layout_constraintTop_toTopOf="@id/bg_view" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/fm_dp_25"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/bg_view"
+        app:layout_constraintEnd_toEndOf="@id/bg_view"
+        app:layout_constraintStart_toStartOf="@id/bg_view">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="@dimen/fm_dp_100"
+            android:layout_height="@dimen/fm_dp_33"
+            android:layout_marginEnd="35dp"
+            android:background="@drawable/fm_common_cancel_shape"
+            android:gravity="center"
+            android:text="暂不更新"
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ok_success"
+            android:layout_width="@dimen/fm_dp_100"
+            android:layout_height="@dimen/fm_dp_33"
+            android:background="@drawable/fm_ff8157ff_ffe056ff_radis_15"
+            android:gravity="center"
+            android:text="立即更新"
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_View"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="15dp"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarSize="5dp"
+        android:scrollbarThumbVertical="@drawable/lg_scrollbar_custom"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@id/ll"
+        app:layout_constraintEnd_toEndOf="@id/bg_view"
+        app:layout_constraintStart_toStartOf="@id/bg_view"
+        app:layout_constraintTop_toBottomOf="@id/tv_title">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:lineSpacingExtra="@dimen/fm_dp_12"
+            android:minHeight="90dp"
+            android:paddingBottom="@dimen/fm_dp_12"
+            android:text="当前已是最新版当前已是最新版当前已是
+                最新版当前已是最新版当前已是最新版当前已是最新版当前已是最新版"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fm_text_size_13" />
+    </androidx.core.widget.NestedScrollView>
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/cancel_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/fm_dp_15"
+        android:src="@mipmap/ic_close_dialog_pay_success"
+        app:layout_constraintBottom_toTopOf="@id/bg_view"
+        app:layout_constraintEnd_toEndOf="@id/bg_view" />
+
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_update_notice"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:constraint_referenced_ids="tv_title,ll,scroll_View" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/update_progress_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/fm_dp_67.5"
+        android:text="0%"
+        android:textColor="@color/white"
+        android:textSize="@dimen/fm_text_size_16"
+        app:layout_constraintEnd_toEndOf="@id/bg_view"
+        app:layout_constraintStart_toStartOf="@id/bg_view"
+        app:layout_constraintTop_toTopOf="@id/bg_view" />
+
+
+    <ProgressBar
+        android:id="@+id/update_progress"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="@dimen/fm_dp_250"
+        android:layout_height="@dimen/fm_dp_10"
+        android:layout_marginTop="@dimen/fm_dp_16"
+        android:max="100"
+        android:progressDrawable="@drawable/progress_drawable"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/update_progress_num" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_botton_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/fm_dp_20.5"
+        android:inputType="textMultiLine"
+        android:maxLines="10"
+        android:singleLine="false"
+        android:text="正在更新中..."
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/update_progress" />
+
+   <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/install_fail"
+        android:layout_width="@dimen/fm_dp_110"
+        android:layout_height="@dimen/fm_dp_33"
+        android:background="@drawable/fm_ff8157ff_ffe056ff_radis_15"
+        android:gravity="center"
+        android:text="更新失败,重试"
+        android:textColor="@color/white"
+       android:visibility="gone"
+        android:textSize="13sp"
+        android:layout_marginBottom="@dimen/fm_dp_25"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/bg_view"/>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_progress"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:constraint_referenced_ids="update_progress_num,update_progress,tv_botton_desc" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

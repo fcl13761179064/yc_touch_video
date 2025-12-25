@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/all_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/fm_dp_68"
+        android:src="@mipmap/fm_meng_ceng_close"
+        app:layout_constraintBottom_toTopOf="@+id/view_bg"
+        app:layout_constraintRight_toRightOf="@+id/view_bg" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cs_ksong"
+        android:layout_width="@dimen/fm_dp_129"
+        android:layout_height="@dimen/fm_dp_48"
+        app:layout_constraintLeft_toLeftOf="@+id/view_bg"
+        android:background="@drawable/selector_activate_bottom_46454c_10radius"
+        android:layout_marginBottom="@dimen/fm_dp_16"
+        app:layout_constraintBottom_toTopOf="@+id/view_bg"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ksong_name_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="K歌会员"
+            android:textColor="@drawable/color_text_vip_dialog"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/ksong_time_desc"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ksong_time_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="未开通或已过期"
+            android:layout_marginTop="4dp"
+            android:textColor="@drawable/color_text_vip_dialog"
+            android:textSize="10sp"
+            android:layout_marginBottom="@dimen/fm_dp_7"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cs_video"
+        android:layout_width="@dimen/fm_dp_129"
+        android:layout_height="@dimen/fm_dp_48"
+        android:layout_marginBottom="@dimen/fm_dp_16"
+        app:layout_constraintBottom_toTopOf="@+id/view_bg"
+        android:background="@drawable/selector_activate_bottom_46454c_10radius"
+        app:layout_constraintLeft_toRightOf="@+id/cs_ksong"
+        app:layout_constraintRight_toLeftOf="@+id/cs_super"
+        android:layout_marginStart="@dimen/fm_dp_14.5"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/video_name_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="电影会员"
+            android:textStyle="bold"
+            android:textColor="@drawable/color_text_vip_dialog"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/video_time_desc" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/video_time_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="未开通或已过期"
+            android:textColor="@drawable/color_text_vip_dialog"
+            android:textSize="10sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="@dimen/fm_dp_7"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cs_super"
+        android:layout_width="@dimen/fm_dp_129"
+        android:layout_height="@dimen/fm_dp_48"
+        android:background="@drawable/selector_activate_bottom_46454c_10radius"
+        app:layout_constraintBottom_toBottomOf="@+id/cs_ksong"
+        app:layout_constraintLeft_toRightOf="@+id/cs_video"
+        app:layout_constraintBottom_toTopOf="@+id/view_bg"
+        android:layout_marginBottom="@dimen/fm_dp_16"
+        android:layout_marginStart="@dimen/fm_dp_14.5"
+        android:visibility="gone"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/super_name_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="超级会员"
+            android:textStyle="bold"
+            android:textColor="@drawable/color_text_vip_dialog"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/super_time_desc"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/super_time_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="未开通或已过期"
+            android:textColor="@drawable/color_text_vip_dialog"
+            android:textSize="10sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="@dimen/fm_dp_7"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <View
+        android:id="@+id/view_bg"
+        android:layout_width="416dp"
+        android:layout_height="@dimen/fm_dp_268"
+        android:layout_marginTop="@dimen/fm_dp_16"
+        android:background="@mipmap/bg_pay_ksong"
+        android:clickable="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="@dimen/fm_dp_62"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/movie_sigle_watch_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="24小时内观看"
+        android:textColor="#fffef5af"
+        android:textSize="@dimen/fm_dp_11"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/view_bg"
+        app:layout_constraintLeft_toLeftOf="@id/view_bg"
+        app:layout_constraintRight_toRightOf="@+id/view_bg"
+        android:layout_marginTop="@dimen/fm_dp_23"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_price"
+        android:layout_width="@dimen/fm_dp_222"
+        android:layout_height="@dimen/fm_dp_193"
+        android:layout_marginStart="@dimen/fm_dp_15"
+        android:layout_marginTop="9dp"
+        app:layout_constraintStart_toStartOf="@id/cs_ksong"
+        app:layout_constraintTop_toTopOf="@id/ll_code"
+        tools:itemCount="4"
+        app:layout_constraintBottom_toBottomOf="@id/ll_code"
+        tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_price" />
+
+    <LinearLayout
+        android:id="@+id/ll_code"
+        android:layout_width="@dimen/fm_dp_147"
+        android:layout_height="@dimen/fm_dp_193"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/app_shape_personal_qy_white_bg"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/fm_dp_60.5"
+        app:layout_constraintEnd_toEndOf="@+id/view_bg"
+        app:layout_constraintTop_toTopOf="@id/view_bg">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_tt_moeny"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/fm_F05B1A_color"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                tools:text="¥24" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/at_xufei"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="扫码续费"
+                android:layout_marginTop="2dp"
+                android:textColor="#222222"
+                android:textSize="@dimen/fm_text_size_12"
+                android:textStyle="bold" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <FrameLayout
+            android:layout_width="@dimen/fm_dp_125"
+            android:layout_height="@dimen/fm_dp_125"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="8dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/qd_ewm_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@mipmap/fm_common_wechat" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <ViewStub
+        android:id="@+id/vs_loading"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout="@layout/fm_dialog_loading"
+        app:layout_constraintBottom_toBottomOf="@id/view_bg"
+        app:layout_constraintEnd_toEndOf="@id/view_bg"
+        app:layout_constraintStart_toStartOf="@id/view_bg"
+        app:layout_constraintTop_toTopOf="@id/view_bg" />
+</androidx.constraintlayout.widget.ConstraintLayout>

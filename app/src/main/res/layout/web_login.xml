@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cs_web_login"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clickable="true">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cs_layout"
+        android:layout_width="@dimen/fm_dp_106"
+        android:layout_height="@dimen/fm_dp_126"
+        android:background="@mipmap/bg_web_login"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/qr_web"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/fm_white"
+            android:scaleType="centerCrop"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+         />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/fm_dp_24"
+            android:layout_height="@dimen/fm_dp_24"
+            android:background="@mipmap/fm_common_wechat"
+            app:layout_constraintLeft_toLeftOf="@+id/qr_web"
+            app:layout_constraintRight_toRightOf="@+id/qr_web"
+            app:layout_constraintBottom_toBottomOf="@+id/qr_web"
+            app:layout_constraintTop_toTopOf="@+id/qr_web" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="微信点歌"
+            android:layout_marginTop="3dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fm_text_size_14"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/qr_web" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

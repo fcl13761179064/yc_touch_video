@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/all_view"
+    android:background="#20000000">
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="375dp"
+        android:layout_height="239dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/fm_shape_all_success_radius_15"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:text="提示"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fm_text_size_18"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="44dp"
+            android:text="是否退出登录"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fm_text_size_16"
+            android:textStyle="bold" />
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_cancel"
+                android:layout_width="@dimen/fm_dp_120"
+                android:layout_height="40dp"
+                android:layout_marginRight="40dp"
+                android:background="@drawable/fm_common_cancel_shape"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="@color/white" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/ok_success"
+                android:layout_width="@dimen/fm_dp_120"
+                android:layout_height="40dp"
+                android:background="@drawable/fm_ff8157ff_ffe056ff_radis_15"
+                android:gravity="center"
+                android:text="确定"
+                android:textColor="@color/white" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</RelativeLayout>

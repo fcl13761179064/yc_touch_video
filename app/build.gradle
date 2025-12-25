@@ -1,0 +1,231 @@
+import java.util.regex.Matcher
+import java.util.regex.Pattern
+
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+
+}
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
+android {
+    namespace = "com.lucky.sound"
+    compileSdk = 33
+
+    //12-18
+    defaultConfig {
+        applicationId = "com.yc.video"
+        minSdk = 21
+        targetSdk = 33
+        //https://blog.csdn.net/zhjjlles/article/details/128644320 开关wifi问题，板子弄成系统应用后不受影响
+        versionCode = 1
+        //版本号是动态配置的
+        versionName = "TOURCH_DEFAULT"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary = true
+        }
+
+        multiDexEnabled true
+
+        externalNativeBuild {
+            cmake {
+                cppFlags ''
+            }
+        }
+    }
+    /*  splits {
+            abi {
+                enable true
+                reset()
+                include 'x86', 'x86_64', 'armeabi-v7a', 'armeabi'
+                universalApk false
+            }
+        }*/
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs', 'src/main/jniLibs']
+        }
+    }
+
+
+    flavorDimensions "default" //定义1个风味维度
+    productFlavors {
+        TOUCH_TEST {
+            def dateString = new Date().format("yyyyMMdd")
+            versionName "TOUCH_TEST_${dateString}_1"
+        }
+        TOUCH_DEFAULT {
+            def dateString = new Date().format("yyyyMMdd")
+            versionName "TOUCH_DEFAULT_${dateString}_1"
+        }
+
+        TOUCH_LYCDX {
+            def dateString = new Date().format("yyyyMMdd")
+            versionName "TOUCH_LYCDX_${dateString}_1"
+        }
+
+        TOUCH_LZL {
+            def dateString = new Date().format("yyyyMMdd")
+            versionName "TOUCH_LZL_${dateString}_1"
+        }
+
+
+        TOUCH_H81P {
+            def dateString = new Date().format("yyyyMMdd")
+            versionName "TOUCH_H81P_${dateString}_1"
+        }
+
+        TOUCH_YCHOME {
+            def dateString = new Date().format("yyyyMMdd")
+            versionName "TOUCH_YCHOME_${dateString}_1"
+        }
+
+        TOUCH_XLP {
+            def dateString = new Date().format("yyyyMMdd")
+            versionName "TOUCH_XLP_${dateString}_1"
+        }
+
+        TOUCH_ZRX {
+            def dateString = new Date().format("yyyyMMdd")
+            versionName "TOUCH_ZRX_${dateString}_1"
+        }
+
+        TOUCH_PHONE {
+            def dateString = new Date().format("yyyyMMdd")
+            versionName "TOUCH_PHONE_${dateString}_1"
+        }
+
+        TOUCH_JINHUI {
+            def dateString = new Date().format("yyyyMMdd")
+            versionName "TOUCH_JINHUI_${dateString}_1"
+        }
+        TOUCH_ZHB {
+            def dateString = new Date().format("yyyyMMdd")
+            versionName "TOUCH_ZHB_${dateString}_1"
+        }
+
+        TOUCH_STARLOOP {
+            def dateString = new Date().format("yyyyMMdd")
+            versionName "TOUCH_STARLOOP_${dateString}_1"
+        }
+
+    }
+
+    android.applicationVariants.all { variant ->
+        variant.assemble.doLast {
+            variant.outputs.all { output ->
+                delete output.outputFile.parent + File.separator + "output.json"
+
+                def separator = File.separator
+                def targetDirPath = ""
+                def targetFileName = ""
+                targetFileName = "${variant.versionName}.apk"
+                targetDirPath = project.getProjectDir().absolutePath + separator + "apks" + separator + variant.buildType.name + separator + variant.versionName
+                if (!targetFileName.isBlank()) {
+                    def targetFile = new File(targetDirPath, targetFileName)
+                    if (targetFile.exists()) {
+                        targetFile.delete()
+                    }
+                    copy {
+                        from output.outputFile
+                        into targetDirPath
+                        rename { targetFileName }
+                    }
+                }
+            }
+        }
+    }
+
+
+    signingConfigs {
+        config {
+            file("../signing.properties").with { propFile ->
+                if (propFile.canRead()) {
+                    println 'signing.properties found, reading signing.properties'
+                    def keystoreProperties = new Properties()
+                    keystoreProperties.load(new FileInputStream(propFile))
+                    v1SigningEnabled true
+                    v2SigningEnabled true
+                    keyAlias keystoreProperties['keyAlias']
+                    keyPassword keystoreProperties['keyPassword']
+                    storePassword keystoreProperties['storePassword']
+                    storeFile rootProject.file("./yc.jks")
+                } else {
+                    println 'Unable to read signing.properties'
+                }
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            zipAlignEnabled true
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+        debug {
+            zipAlignEnabled true
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+
+    dataBinding {
+        enabled = true
+    }
+  /*  externalNativeBuild {
+        cmake {
+            path file('src/main/cpp/CMakeLists.txt')
+            version '3.22.1'
+        }
+    }*/
+
+}
+def composeVersion = "1.0.0-alpha06"
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+    implementation project(":common_framework")
+    implementation project(":md_network")
+    implementation project(":movie_sdk")
+    implementation project(":ktv_sdk")
+    if (!isSigleRun.toBoolean()) implementation project(":md_login")
+    implementation project(":websocketlib")
+    implementation project(":animation")
+    implementation project(":room_database")
+    implementation("io.github.thanosfisherman.wifiutils:wifiutils:1.6.6")
+    implementation 'com.google.android.flexbox:flexbox:3.0.0'
+    implementation project (':blurviewlibrary')
+    implementation files('libs\\hcicloud-5.0.jar')
+
+    implementation "androidx.compose.ui:ui:$composeVersion"
+    implementation "androidx.compose.foundation:foundation:$composeVersion"
+    implementation "androidx.ui:ui-tooling:$composeVersion"
+    implementation "androidx.compose.material:material:$composeVersion"
+    implementation "com.haibin:calendarview:3.7.1"
+}
+
+
+

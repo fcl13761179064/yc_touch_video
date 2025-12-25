@@ -1,0 +1,2 @@
+configurations.maybeCreate("default")
+artifacts.add("default", file("ktv-sdk-yinchuang-3.0.07.05-20240704.114505-1.aar"))

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/fm_dp_54"
+    android:layout_marginTop="@dimen/fm_dp_5"
+    >
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lav_playing"
+        android:layout_width="@dimen/fm_dp_20"
+        android:layout_height="@dimen/fm_dp_20"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_rawRes="@raw/ktv_playing_gift"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cs_layout"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/fm_dp_10"
+        app:layout_constraintBottom_toBottomOf="@+id/lav_playing"
+        app:layout_constraintLeft_toRightOf="@+id/lav_playing"
+        app:layout_constraintTop_toTopOf="@+id/lav_playing">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_sound_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:ellipsize="end"
+            android:maxEms="11"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="每年飞机的撒发大幅度"
+            android:textColor="@color/fm_white"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_star_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:singleLine="true"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:layout_constraintLeft_toLeftOf="@id/tv_sound_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_sound_name"
+            tools:text="周杰伦" />
+
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_cleaness"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/img_user_cleaness"
+            android:layout_marginLeft="@dimen/fm_dp_5"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_star_name"
+            app:layout_constraintLeft_toRightOf="@+id/tv_star_name"
+            app:layout_constraintTop_toTopOf="@+id/tv_star_name" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_mv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/img_user_mv"
+            android:layout_marginLeft="@dimen/fm_dp_5"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_cleaness"
+            app:layout_constraintLeft_toRightOf="@+id/iv_cleaness"
+            app:layout_constraintTop_toTopOf="@+id/iv_cleaness" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_hq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/img_user_hq"
+            android:layout_marginLeft="@dimen/fm_dp_5"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_mv"
+            app:layout_constraintLeft_toRightOf="@+id/iv_mv"
+            app:layout_constraintTop_toTopOf="@+id/iv_mv" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/at_check_song_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/fm_current_player_qg_btn"
+        android:layout_marginRight="25.5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

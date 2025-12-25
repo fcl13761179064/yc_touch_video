@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_pay_item"
+    android:layout_width="match_parent"
+    android:layout_height="49dp"
+    android:layout_marginBottom="7.5dp"
+    android:background="@drawable/selector_price"
+    android:clickable="true">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="20dp"
+        android:textColor="@drawable/selector_price_tv_color"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/yc_font"
+        tools:text="¥299" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="98.5dp"
+        android:textColor="@drawable/selector_price_tv_color"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/yc_font"
+        tools:text="年卡" />
+</FrameLayout>

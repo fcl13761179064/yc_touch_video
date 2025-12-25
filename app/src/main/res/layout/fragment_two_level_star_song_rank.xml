@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+  >
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rank_recycleview"
+        android:layout_width="@dimen/fm_dp_166"
+        android:layout_height="0dp"
+        android:scrollbars="vertical"
+        android:fadeScrollbars="false"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:layout_marginRight="@dimen/fm_dp_15"
+        android:scrollbarSize="5dp"
+        android:scrollbarThumbVertical="@drawable/lg_scrollbar_custom"
+        android:scrollbarStyle="outsideOverlay"
+        app:layout_constraintBottom_toBottomOf="@+id/recycleview"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/av_song_rank_img"
+        android:layout_width="@dimen/fm_dp_120"
+        android:layout_height="@dimen/fm_dp_120"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/recycleview"
+        android:layout_marginTop="@dimen/fm_dp_37"
+        android:fontFamily="@font/yc_font"
+        android:layout_marginRight="@dimen/fm_dp_37"
+       />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/av_song_rank_text"
+        android:layout_width="@dimen/fm_dp_120"
+        android:layout_height="@dimen/fm_dp_34"
+        android:text="热门"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/yc_font"
+        android:background="@mipmap/bg_rank_text"
+        android:textColor="@color/fm_white"
+        android:layout_marginTop="11.5dp"
+        app:layout_constraintLeft_toLeftOf="@+id/av_song_rank_img"
+        app:layout_constraintRight_toRightOf="@+id/av_song_rank_img"
+        app:layout_constraintTop_toBottomOf="@+id/av_song_rank_img"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_song_order_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="“60后怀旧老歌”"
+        android:textSize="15sp"
+        android:fontFamily="@font/yc_font"
+        android:textColor="@color/fm_color_ffc64eff"
+        android:layout_marginTop="@dimen/fm_dp_5.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycleview"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/fm_dp_250"
+            app:layout_constraintTop_toBottomOf="@+id/tv_song_order_desc"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="@dimen/fm_dp_10"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginEnd="@dimen/fm_dp_190.5"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="10"
+            tools:listitem="@layout/adapter_item_sound_info" />
+
+    <include
+        android:id="@+id/bottom_opera_layout"
+        android:layout_height="@dimen/fm_dp_53"
+        android:layout_width="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        layout="@layout/include_common_bottom_opera_layout"
+        app:layout_constraintRight_toRightOf="@+id/recycleview"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
+

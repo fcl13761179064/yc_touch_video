@@ -1,0 +1,73 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
+android {
+    namespace = "com.user.login"
+    compileSdk = 33
+
+    defaultConfig {
+        if (isSigleRun.toBoolean()) applicationId "com.user.login"
+        minSdk = 19
+        targetSdk = 33
+        versionCode = 1
+        versionName = "1.0"
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildFeatures {
+            viewBinding true
+        }
+    }
+
+    buildTypes {
+        release {
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    resourcePrefix = "lg_" //限制res资源文件名需要用lg开头
+    sourceSets {
+        // java{ }//指定代码目录
+        //      manifest{ }//指定清单文件路径
+        //      res{ }//指定资源文件目录
+        //      jniLibs{ }//指定jni文件目录
+        main {
+            //NDK的全称是Native Development kit。NDK是一个工具集，允许你的App使用一些底层语言代码，例如C和C++
+            jniLibs.srcDirs = ['libs']  //设置目标的so存放路径
+            if (isSigleRun.toBoolean()) {
+                manifest.srcFile 'src/main/login/AndroidManifest.xml'
+
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+                java {
+                    exclude 'debug/**'  //  release模式下排除debug文件中所有的java文件
+                }
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar','*.aar'])
+    implementation project(":common_framework")
+    implementation project(":md_network")
+    implementation project(":room_database")
+    implementation project(":movie_sdk")
+    implementation project(":animation")
+}

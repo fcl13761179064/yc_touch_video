@@ -1,0 +1,60 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    alias(fmlibs.plugins.android.application) apply false
+    alias(fmlibs.plugins.android.library) apply false
+    alias(fmlibs.plugins.kotlin.android) apply false
+    alias(fmlibs.plugins.therouter.plugin) apply false
+}
+
+enum Environment {
+    TEST,   //测试环境
+    PROD    //生产环境w
+}
+
+ext {
+    ENVIRONMENT = Environment
+    qa_environment = Environment.PROD
+    /*服务端接口*/
+    TEST_SERVER_URL = "https://apk-sing.y-wechat.cn/"//测试环境
+//    TEST_SERVER_URL = "http://192.168.1.163:8000/"//测试环境
+    PROD_SERVER_URL = "https://api.kg.qq.com/" //正式环境
+
+    /*  全民接口*/
+
+    /*正式环境：https://api.kg.qq.com/oauth/v2/access_token
+    体验环境：https://api.kg.qq.com/test/oauth/v2/access_token*/
+    TEST_SDK_URL = "https://api.kg.qq.com/test/"//测试环境
+    PROD_SDK_URL = "https://api.kg.qq.com/" //正式环境
+
+
+    //获取全民正式环境的access_token
+    APK_SING_URL="https://apk-sing.y-wechat.cn/"
+
+    //apk-movie
+    APK_MOVIE_URL="https://apk-movie.y-wechat.cn/"
+
+
+    //apk_marketing
+    APK_MARKETING_URL="https://apk-marketing.y-wechat.cn/"
+
+    //apk_public
+    APK_PUBLIC_URL="https://apk-public.y-wechat.cn/"
+
+    //读取本地配置
+    def localPropFile = project.rootProject.file('local.properties')
+    ktvSdkAppId = ''
+    ktvSdkAppKey = ''
+    if (localPropFile.exists()) {
+        Properties properties = new Properties()
+        properties.load(localPropFile.newDataInputStream())
+        ktvSdkAppId = properties.getProperty("KTV_SDK_APP_ID")
+        ktvSdkAppKey = properties.getProperty("KTV_SDK_APP_KEY")
+    }
+}
+
+
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+

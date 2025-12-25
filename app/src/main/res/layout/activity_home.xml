@@ -1,0 +1,746 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cs_home_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#202356">
+
+    <!--首页背景图-->
+    <ImageView
+        android:id="@+id/img_bg_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@mipmap/bg_main_activity_bg"
+        android:scaleType="fitXY" />
+
+    <!--顶部操作栏-->
+    <include layout="@layout/fragment_setting_info" />
+
+    <!--播放器背景图     android:background="@drawable/selector_home_bg_min_player_color"-->
+    <ImageView
+        android:id="@+id/view_bg_play"
+        android:layout_width="@dimen/fm_dp_164"
+        android:layout_height="157dp"
+        android:layout_marginStart="@dimen/fm_dp_15"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/yc_img" />
+
+    <TextView
+        android:id="@+id/tv_playing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="@dimen/fm_dp_95"
+        android:layout_marginBottom="15dp"
+        android:text="正在播"
+        android:fontFamily="@font/yc_font"
+        android:textColor="#99FFFFFF"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toTopOf="@id/tv_next_play"
+        app:layout_constraintStart_toStartOf="@id/view_bg_play"
+        app:layout_constraintTop_toTopOf="@id/view_bg_play"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/tv_next_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="下一首"
+        android:fontFamily="@font/yc_font"
+        android:textColor="#99FFFFFF"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="@id/view_bg_play"
+        app:layout_constraintStart_toStartOf="@id/view_bg_play"
+        app:layout_constraintTop_toBottomOf="@id/tv_playing" />
+
+    <TextView
+        android:id="@+id/tv_playing_song"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="只要为你活一天"
+        android:fontFamily="@font/yc_font"
+        android:textColor="#ffffffff"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/tv_playing"
+        app:layout_constraintEnd_toEndOf="@id/view_bg_play"
+        app:layout_constraintStart_toEndOf="@id/tv_playing"
+        app:layout_constraintTop_toTopOf="@id/tv_playing" />
+
+    <TextView
+        android:id="@+id/tv_next_song"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="没歌了，快去点歌"
+        android:textColor="#ffffffff"
+        android:textSize="12sp"
+        android:fontFamily="@font/yc_font"
+        app:layout_constraintBottom_toBottomOf="@id/tv_next_play"
+        app:layout_constraintEnd_toEndOf="@id/view_bg_play"
+        app:layout_constraintStart_toEndOf="@id/tv_next_play"
+        app:layout_constraintTop_toTopOf="@id/tv_next_play" />
+
+
+    <!--音视频播放控制按钮-->
+    <ImageView
+        android:id="@+id/view_bg_cz"
+        android:layout_width="164dp"
+        android:layout_height="227.5dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10.5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_bg_play" />
+
+
+    <!--已点-->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/at_also_add_num"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="6dp"
+        android:background="@mipmap/bg_also_add_layout"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center_horizontal"
+        android:paddingTop="18dp"
+        android:text="0"
+        android:fontFamily="@font/yc_font"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@id/view_bg_cz"
+        app:layout_constraintTop_toTopOf="@id/view_bg_cz" />
+
+
+    <!--切歌-->
+    <View
+        android:id="@+id/cs_check_song"
+        android:layout_width="73dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="6dp"
+        android:background="@mipmap/bg_check_song_layout"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        app:layout_constraintEnd_toEndOf="@+id/view_bg_cz"
+        app:layout_constraintTop_toTopOf="@id/view_bg_cz" />
+
+
+    <ImageView
+        android:id="@+id/btn_zt"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="9dp"
+        android:background="@drawable/selector_bg_home_player_control"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:scaleType="centerInside"
+        android:src="@mipmap/ic_play_zt"
+        app:layout_constraintStart_toStartOf="@id/view_bg_cz"
+        app:layout_constraintTop_toBottomOf="@id/cs_check_song" />
+
+    <TextView
+        android:id="@+id/tv_zt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/fm_dp_5"
+        android:includeFontPadding="false"
+        android:text="暂停"
+        android:fontFamily="@font/yc_font"
+        android:textColor="#CCFFFFFF"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@id/btn_zt"
+        app:layout_constraintStart_toStartOf="@id/btn_zt"
+        app:layout_constraintTop_toBottomOf="@id/btn_zt" />
+
+
+    <ImageView
+        android:id="@+id/btn_cc"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="9dp"
+        android:background="@drawable/selector_bg_home_player_control"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:scaleType="centerInside"
+        android:src="@mipmap/ic_play_cc"
+        app:layout_constraintStart_toEndOf="@id/btn_zt"
+        app:layout_constraintTop_toBottomOf="@id/cs_check_song" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/fm_dp_5"
+        android:includeFontPadding="false"
+        android:text="重唱"
+        android:textColor="#CCFFFFFF"
+        android:textSize="10sp"
+        android:fontFamily="@font/yc_font"
+        app:layout_constraintEnd_toEndOf="@id/btn_cc"
+        app:layout_constraintStart_toStartOf="@id/btn_cc"
+        app:layout_constraintTop_toBottomOf="@id/btn_cc" />
+
+    <ImageView
+        android:id="@+id/btn_yc"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="9dp"
+        android:background="@drawable/selector_bg_home_player_control"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:scaleType="centerInside"
+        android:src="@mipmap/ic_play_bz"
+        app:layout_constraintStart_toEndOf="@id/btn_cc"
+        app:layout_constraintTop_toBottomOf="@id/cs_check_song" />
+
+    <TextView
+        android:id="@+id/tv_yc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/fm_dp_5"
+        android:includeFontPadding="false"
+        android:text="伴奏"
+        android:fontFamily="@font/yc_font"
+        android:textColor="#CCFFFFFF"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@id/btn_yc"
+        app:layout_constraintStart_toStartOf="@id/btn_yc"
+        app:layout_constraintTop_toBottomOf="@id/btn_yc" />
+
+
+    <ImageView
+        android:id="@+id/btn_jy"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/selector_bg_home_player_control"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:scaleType="centerInside"
+        android:src="@drawable/selector_play_jy"
+        app:layout_constraintStart_toStartOf="@id/btn_zt"
+        app:layout_constraintTop_toBottomOf="@id/btn_zt" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/fm_dp_5"
+        android:includeFontPadding="false"
+        android:text="静音"
+        android:fontFamily="@font/yc_font"
+        android:textColor="#CCFFFFFF"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@id/btn_jy"
+        app:layout_constraintStart_toStartOf="@id/btn_jy"
+        app:layout_constraintTop_toBottomOf="@id/btn_jy" />
+
+    <View
+        android:layout_width="92dp"
+        android:layout_height="40dp"
+        android:background="@drawable/shap_bg_home_volume"
+        app:layout_constraintBottom_toBottomOf="@id/at_minus_volue"
+        app:layout_constraintEnd_toEndOf="@id/at_plus_volue"
+        app:layout_constraintStart_toStartOf="@id/at_minus_volue"
+        app:layout_constraintTop_toTopOf="@id/at_minus_volue" />
+
+    <View
+        android:layout_width="0.5dp"
+        android:layout_height="20dp"
+        android:background="#0FFFFFFF"
+        app:layout_constraintBottom_toBottomOf="@id/at_minus_volue"
+        app:layout_constraintEnd_toEndOf="@id/at_plus_volue"
+        app:layout_constraintStart_toStartOf="@id/at_minus_volue"
+        app:layout_constraintTop_toTopOf="@id/at_minus_volue" />
+
+    <ImageView
+        android:id="@+id/at_minus_volue"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="30dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:scaleType="centerInside"
+        android:src="@mipmap/fm_play_sound_minus"
+        app:layout_constraintStart_toStartOf="@id/btn_cc"
+        app:layout_constraintTop_toBottomOf="@id/btn_cc" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/fm_dp_5"
+        android:includeFontPadding="false"
+        android:text="音量-"
+        android:textColor="#CCFFFFFF"
+        android:fontFamily="@font/yc_font"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@id/at_minus_volue"
+        app:layout_constraintStart_toStartOf="@id/at_minus_volue"
+        app:layout_constraintTop_toBottomOf="@id/at_minus_volue" />
+
+    <ImageView
+        android:id="@+id/at_plus_volue"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="30dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:scaleType="centerInside"
+        android:src="@mipmap/img_dialog_sound_plus_selected"
+        app:layout_constraintStart_toStartOf="@id/btn_yc"
+        app:layout_constraintTop_toBottomOf="@id/btn_yc" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/fm_dp_5"
+        android:includeFontPadding="false"
+        android:text="音量+"
+        android:textColor="#CCFFFFFF"
+        android:textSize="10sp"
+        app:textFont="@font/yc_font"
+        app:layout_constraintEnd_toEndOf="@id/at_plus_volue"
+        app:layout_constraintStart_toStartOf="@id/at_plus_volue"
+        app:layout_constraintTop_toBottomOf="@id/at_plus_volue" />
+
+
+    <!--右边背景子类-->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/home_bg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/bg_main_right_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/view_bg_play"
+        app:layout_constraintTop_toTopOf="@+id/view_bg_play" />
+
+    <!--右边横向菜单栏，如首页，点歌，歌星-->
+    <include layout="@layout/inlcude_radio_group" />
+
+
+    <FrameLayout
+        android:id="@+id/repleace_home_fragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/fm_dp_12"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="@+id/home_bg"
+        app:layout_constraintRight_toRightOf="@+id/line"
+        app:layout_constraintTop_toBottomOf="@+id/rg" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_play_state"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ProgressBar
+                android:id="@+id/pb_loading"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <View
+                android:id="@+id/view_err_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#221452" />
+
+            <ImageView
+                android:id="@+id/img_err"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_play_err"
+                app:layout_constraintBottom_toTopOf="@id/tv_err"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/tv_err"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="25dp"
+                android:text="网络连接失败"
+                android:textColor="#ffffffff"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toTopOf="@id/tv_refresh"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_err"
+                app:textFont="@font/yc_font" />
+
+            <TextView
+                android:id="@+id/tv_refresh"
+                android:layout_width="@dimen/fm_dp_100"
+                android:layout_height="@dimen/fm_dp_33"
+                android:background="@drawable/fm_ff8157ff_ffe056ff_radis_15"
+                android:clickable="true"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:text="刷新"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_err"
+                app:textFont="@font/yc_font" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/at_logotout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="right"
+                android:layout_marginLeft="@dimen/fm_dp_8.5"
+                android:layout_marginTop="@dimen/fm_dp_8.5"
+                android:background="@mipmap/img_logot_out"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="@dimen/fm_dp_40.5"
+                android:text="退出全屏"
+                android:textColor="@color/white"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:textFont="@font/yc_font" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/group_play_err"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="gone"
+                app:constraint_referenced_ids="tv_err,img_err,tv_refresh,view_err_bg,at_logotout" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:layout_marginRight="@dimen/fm_dp_10"
+        android:background="#0DFFFFFF"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/fcv_sear_box_check"
+        app:layout_constraintTop_toTopOf="@+id/repleace_home_fragment"
+        app:layout_goneMarginRight="@dimen/fm_dp_10" />
+
+    <!--键盘-->
+    <FrameLayout
+        android:id="@+id/fcv_sear_box_check"
+        android:layout_width="@dimen/fm_dp_161.5"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        android:layout_marginRight="@dimen/fm_dp_15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/repleace_home_fragment" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_go_full"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="@dimen/fm_dp_15"
+        android:layout_marginTop="@dimen/fm_dp_15"
+        android:src="@mipmap/ic_full_logo"
+        app:layout_constraintStart_toStartOf="@id/view_bg_play"
+        app:layout_constraintTop_toTopOf="@id/view_bg_play" />
+
+
+    <!--第一屏幕没有播放器，展示图片，第2个屏幕展示-->
+    <ImageView
+        android:id="@+id/iv_show_empty_screen"
+        android:layout_width="154dp"
+        android:layout_height="86.63dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="45dp"
+        android:background="@mipmap/img_out_screen_show"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/double_screen_logitout"
+        android:layout_width="@dimen/fm_dp_36"
+        android:layout_height="@dimen/fm_dp_16"
+        android:layout_marginEnd="@dimen/fm_dp_12"
+        android:layout_marginBottom="@dimen/fm_dp_10"
+        android:background="@drawable/common_ff05b1a_back_bg"
+        android:gravity="center"
+        android:text="退出"
+        app:textFont="@font/yc_font"
+        android:textColor="@color/white"
+        android:textSize="9sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_show_empty_screen"
+        app:layout_constraintEnd_toEndOf="@+id/iv_show_empty_screen" />
+
+    <!-- 大屏搜索歌曲布局-->
+    <FrameLayout
+        android:id="@+id/fl_search_song"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#222222"
+        android:visibility="gone" />
+
+   <!-- 手写-->
+    <com.lucky.sound.main.widget.HandwritingLayout
+        android:id="@+id/layout_hand_write"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+
+    <!--播放布局-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_play_control"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <!--播放器切换fragment-->
+        <FrameLayout
+            android:id="@+id/fl_video_check"
+            android:layout_width="154dp"
+            android:layout_height="86.63dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="45dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <!--大屏点歌布局选中播放布局-->
+        <View
+            android:id="@+id/view_player_foc"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/fl_video_check"
+            app:layout_constraintLeft_toLeftOf="@+id/fl_video_check"
+            app:layout_constraintRight_toRightOf="@+id/fl_video_check"
+            app:layout_constraintTop_toTopOf="@+id/fl_video_check" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_voulme"
+            android:layout_width="@dimen/fm_dp_80"
+            android:layout_height="@dimen/fm_dp_60"
+            android:background="@drawable/fm_shape_also_add_sound_10"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/img_icon"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/fm_media_music" />
+
+            <TextView
+                android:id="@+id/tv_txt"
+                android:layout_width="80dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="3dp"
+                android:gravity="center"
+                android:text="10%"
+                app:textFont="@font/yc_font"
+                android:textColor="#fff"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <!--小屏暂停状态-->
+        <ImageView
+            android:id="@+id/img_small_pause"
+            android:layout_width="39dp"
+            android:layout_height="52.6dp"
+            android:src="@mipmap/img_small_screen_pause"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/fl_video_check"
+            app:layout_constraintEnd_toEndOf="@id/fl_video_check"
+            app:layout_constraintStart_toStartOf="@id/fl_video_check"
+            app:layout_constraintTop_toTopOf="@id/fl_video_check" />
+
+
+        <!--暂停等状态-->
+        <com.lucky.sound.main.widget.PlayerOperaAnimation
+            android:id="@+id/view_switch"
+            android:layout_width="76dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8.5dp"
+            android:layout_marginTop="@dimen/fm_dp_58"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--报幕状态-->
+        <com.common.framework.view.PlayerTItleAnimation
+            android:id="@+id/view_bm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/img_yingniuniu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:src="@mipmap/img_video_logo"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.yc.tv.main.widget.TransparentEdgeLayout
+            android:id="@+id/cs_scrool_layout"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/fm_dp_26.5"
+            android:layout_marginTop="@dimen/fm_dp_7.5"
+            android:visibility="gone"
+            app:layout_constraintLeft_toRightOf="@+id/at_player_logo"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.lucky.sound.main.widget.NoLimitTextView
+                android:id="@+id/tv_scroll_song"
+                android:layout_width="wrap_content"
+                android:layout_height="26dp"
+                android:layout_gravity="end"
+                android:background="@drawable/shape_bg_scroll_song"
+                android:gravity="center"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:textColor="#ffffff"
+                android:textSize="14sp"
+                android:layerType="hardware"
+                app:textFont="@font/yc_font"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </com.yc.tv.main.widget.TransparentEdgeLayout>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/at_player_logo"
+            android:layout_width="@dimen/fm_dp_126.5"
+            android:layout_height="@dimen/fm_dp_26.5"
+            android:layout_marginLeft="@dimen/fm_dp_18.5"
+            android:src="@mipmap/img_player_logo"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/cs_scrool_layout"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/cs_scrool_layout" />
+
+
+        <!--大屏无网络状态-->
+
+        <!--小屏无网络状态-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/min_cl_play_state"
+            android:layout_width="154dp"
+            android:layout_height="86.63dp"
+            app:layout_constraintLeft_toLeftOf="@+id/fl_video_check"
+            app:layout_constraintRight_toRightOf="@+id/fl_video_check"
+            app:layout_constraintTop_toTopOf="@+id/fl_video_check">
+
+            <View
+                android:id="@+id/min_view_err_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#221452" />
+
+            <ImageView
+                android:id="@+id/min_img_err"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="@dimen/fm_dp_15"
+                android:src="@mipmap/ic_play_err"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/min_tv_err"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="25dp"
+                android:text="网络连接失败"
+                app:textFont="@font/yc_font"
+                android:textColor="#ffffffff"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/min_img_err" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/min_group_play_err"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="gone"
+                app:constraint_referenced_ids="min_img_err,min_tv_err,min_view_err_bg" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

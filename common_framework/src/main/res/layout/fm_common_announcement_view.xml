@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/common_qmkg_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/fm_dp_8.5"
+    android:layout_marginTop="70dp"
+    android:background="@mipmap/fm_common_announce_bg"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:visibility="gone"
+    >
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/song_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:ellipsize="end"
+        android:maxWidth="160dp"
+        android:maxLines="1"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        tools:text="输了你赢了世界又如何111111111" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/sing_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:textColor="@color/white"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        tools:text="云儿飞" />
+
+</LinearLayout>

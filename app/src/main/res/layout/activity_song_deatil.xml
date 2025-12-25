@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cs_song_detail_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginRight="@dimen/fm_dp_10"
+   >
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ai_star_head"
+        android:layout_width="@dimen/fm_dp_27"
+        android:layout_height="@dimen/fm_dp_27"
+        android:src="@mipmap/img_no_star_head_default"
+        app:shapeAppearanceOverlay="@style/fm_CircleStyle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/at_star_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="“   ” 演唱的歌曲"
+        android:textColorHint="@color/white"
+        android:layout_marginLeft="5dp"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:fontFamily="@font/yc_font"
+        app:layout_constraintLeft_toRightOf="@+id/ai_star_head"
+        app:layout_constraintTop_toTopOf="@+id/ai_star_head"
+        app:layout_constraintBottom_toBottomOf="@+id/ai_star_head"/>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycleview"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fm_dp_250"
+            android:layout_marginTop="@dimen/fm_dp_10"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/at_star_name"
+            tools:itemCount="10"
+            tools:listitem="@layout/adapter_item_sound_info" />
+
+
+    <include
+        android:id="@+id/bottom_opera_layout"
+        android:layout_height="@dimen/fm_dp_53"
+        android:layout_width="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        layout="@layout/include_common_bottom_opera_layout"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

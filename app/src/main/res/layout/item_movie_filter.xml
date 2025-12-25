@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.AppCompatTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/tv_filter"
+    android:layout_width="@dimen/fm_dp_47"
+    android:layout_height="@dimen/fm_dp_24"
+    android:layout_marginTop="@dimen/fm_dp_10"
+    android:layout_marginStart="@dimen/fm_dp_2.5"
+    android:layout_marginEnd="@dimen/fm_dp_2.5"
+    android:background="@drawable/selector_movie_filter_item_bg"
+    android:gravity="center"
+    android:textSize="10sp"
+    android:fontFamily="@font/yc_font"
+    android:maxLines="1"
+    android:textColor="@drawable/selector_movie_filter_item_text" />

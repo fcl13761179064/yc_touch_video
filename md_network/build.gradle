@@ -1,0 +1,47 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+}
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
+android {
+    namespace 'com.net.network'
+    compileSdk 33
+
+    defaultConfig {
+         minSdk = 19
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    resourcePrefix "net_"
+}
+
+dependencies {
+    compileOnly project(":common_framework")
+    implementation project(":ktv_sdk")
+    implementation(fmlibs.lifecycle.common)
+    implementation project(":room_database")
+    //携程下载器
+    implementation "com.github.ssseasonnn:DownloadX:1.0.5"
+}

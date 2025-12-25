@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="@dimen/fm_dp_20"
+    tools:background="@mipmap/bg_main_right_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_movie_msg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fm_dp_165"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/info_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:textColor="#CCFFFFFF"
+            android:textSize="@dimen/fm_text_size_18"
+            android:textStyle="bold"
+            android:fontFamily="@font/yc_font"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="阿凡达·水之道" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/info_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="@dimen/fm_dp_175"
+            android:singleLine="true"
+            android:fontFamily="@font/yc_font"
+            android:textColor="#99FFFFFF"
+            android:textSize="@dimen/fm_text_size_9"
+            app:layout_constraintBottom_toBottomOf="@id/ll_info"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ll_info"
+            tools:text="2004  I  127分钟  I  动作/冒险/科幻  I  美国" />
+
+        <LinearLayout
+            android:id="@+id/ll_info"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/fm_dp_14"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="@dimen/fm_dp_6"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toEndOf="@id/info_year"
+            app:layout_constraintTop_toBottomOf="@id/info_title">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/info_director"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/app_shape_movie_detalis_bg"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLength="10"
+                android:fontFamily="@font/yc_font"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:textColor="#99FFFFFF"
+                android:textSize="@dimen/fm_text_size_9"
+                tools:text="DOLBY" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/info_channel"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/app_shape_movie_detalis_bg"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:fontFamily="@font/yc_font"
+                android:maxLength="10"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:textColor="#99FFFFFF"
+                android:textSize="@dimen/fm_text_size_9"
+                tools:text="5.1声道" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/info_resolution"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/app_shape_movie_detalis_bg"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLength="10"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:textColor="#99FFFFFF"
+                android:fontFamily="@font/yc_font"
+                android:textSize="@dimen/fm_text_size_9"
+                tools:text="DOLBY" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/info_coding"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/app_shape_movie_detalis_bg"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:fontFamily="@font/yc_font"
+                android:maxLength="10"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:textColor="#99FFFFFF"
+                android:textSize="@dimen/fm_text_size_9"
+                tools:text="DOLBY" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/info_actor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="@dimen/fm_dp_50"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:fontFamily="@font/yc_font"
+            android:textColor="#99FFFFFF"
+            android:textSize="@dimen/fm_text_size_9"
+            app:layout_constraintEnd_toStartOf="@id/info_picture"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_info"
+            tools:text="主演： 丹尼尔·雷德克里夫、鲁伯特·格林特…" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/info_des"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="@dimen/fm_dp_50"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:fontFamily="@font/yc_font"
+            android:textColor="#99FFFFFF"
+            android:textSize="@dimen/fm_text_size_9"
+            app:layout_constraintEnd_toStartOf="@id/info_picture"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/info_actor"
+            tools:text="影片简介：该片讲述了第一部中的幸存者爱丽丝醒来发现她被保护伞公司当成了最新型的生化试验品，有超强的力量、感知能力和灵敏度，她的使命是寻找事故" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/info_picture"
+            android:layout_width="@dimen/fm_dp_112"
+            android:layout_height="@dimen/fm_dp_150"
+            android:layout_marginEnd="@dimen/fm_dp_67"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/fm_CircleStyle_5" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/info_see_view"
+            android:layout_width="@dimen/fm_dp_70"
+            android:layout_height="@dimen/fm_dp_47"
+            android:background="@drawable/shape_bg_ffdc3fff_ff6836ff_8"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@id/info_picture"
+            app:layout_constraintStart_toStartOf="parent">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/fm_dp_20"
+                android:layout_height="@dimen/fm_dp_20"
+                android:src="@mipmap/app_moive_info_play" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/info_see_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="试看"
+                android:fontFamily="@font/yc_font"
+                android:textColor="@color/white"
+                android:textSize="@dimen/fm_text_size_11" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/info_kaitong"
+            android:layout_width="@dimen/fm_dp_70"
+            android:layout_height="@dimen/fm_dp_47"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/app_shape_open_movie_bg"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@id/info_picture"
+            app:layout_constraintStart_toEndOf="@id/info_see_view">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/fm_dp_20"
+                android:layout_height="@dimen/fm_dp_20"
+                android:src="@mipmap/app_movie_hy_open_img" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="开通会员"
+                android:fontFamily="@font/yc_font"
+                android:textColor="@color/app_c_401F0B"
+                android:textSize="@dimen/fm_text_size_11" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/info_detalis"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/fm_dp_47"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/app_shape_movie_dpfconst_bg"
+            android:gravity="center"
+            android:minWidth="@dimen/fm_dp_70"
+            android:paddingStart="@dimen/fm_dp_10"
+            android:paddingEnd="@dimen/fm_dp_10"
+            android:fontFamily="@font/yc_font"
+            android:text="6元\n单片付费"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fm_text_size_11"
+            app:layout_constraintBottom_toBottomOf="@id/info_picture"
+            app:layout_constraintStart_toEndOf="@id/info_kaitong" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/ll_collect"
+            android:layout_width="@dimen/fm_dp_70"
+            android:layout_height="@dimen/fm_dp_47"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/app_shape_movie_dpfconst_bg"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@id/info_picture"
+            app:layout_constraintStart_toEndOf="@id/info_detalis">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_collect"
+                android:layout_width="@dimen/fm_dp_20"
+                android:layout_height="@dimen/fm_dp_20"
+                android:src="@drawable/state_select_collect_sound" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/movie_collect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="收藏"
+                android:fontFamily="@font/yc_font"
+                android:textColor="@color/white"
+                android:textSize="@dimen/fm_text_size_11" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/movie_recycleview"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/img_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/fm_no_login_data"
+            app:layout_constraintBottom_toTopOf="@id/tv_loading"
+            app:layout_constraintDimensionRatio="H,2:1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:alpha="0.6"
+            android:text="空空如也"
+            android:fontFamily="@font/yc_font"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fm_text_size_13"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_loading" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/movie_recycleview"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fm_dp_112.5"
+        android:layout_marginTop="@dimen/fm_dp_10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cl_movie_msg"
+        />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:constraint_referenced_ids="movie_recycleview,cl_movie_msg" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_return"
+        android:layout_width="@dimen/fm_dp_78"
+        android:layout_height="@dimen/fm_dp_28"
+        android:layout_marginEnd="@dimen/fm_dp_15"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/common_ff05b1a_back_bg"
+        android:drawableStart="@mipmap/img_back_common_page"
+        android:gravity="center"
+        android:paddingStart="@dimen/fm_dp_14"
+        android:paddingEnd="@dimen/fm_dp_12"
+        android:text="返回"
+        android:fontFamily="@font/yc_font"
+        android:textColor="@color/white"
+        android:textSize="@dimen/fm_text_size_13"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <include
+        android:visibility="gone"
+        android:id="@+id/layout_loading"
+        layout="@layout/common_progress_loading" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

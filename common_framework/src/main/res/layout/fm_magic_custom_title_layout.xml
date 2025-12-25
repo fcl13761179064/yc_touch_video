@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginRight="@dimen/fm_dp_45"
+    >
+
+    <RelativeLayout
+        android:id="@+id/rl_magic_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/fm_dp_8"
+        android:paddingBottom="@dimen/fm_dp_8"
+        android:paddingLeft="@dimen/fm_dp_19"
+        android:paddingRight="@dimen/fm_dp_19"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="排行榜你好啊"
+            android:layout_centerInParent="true"
+            android:textColor="@color/fm_white"
+            android:textSize="@dimen/fm_text_size_21"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cs_record_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="@dimen/fm_dp_20">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="@dimen/fm_dp_10"
+       >
+
+        <RadioGroup
+            android:id="@+id/rg"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/fm_dp_26.5"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:id="@+id/rbt_hot"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:button="@null"
+                android:checked="true"
+                android:drawableBottom="@drawable/selector_movie_rb_incator"
+                android:drawablePadding="-14dp"
+                android:text="热门歌曲"
+                android:fontFamily="@font/yc_font"
+                android:textColor="@drawable/selector_movie_rb_text"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/rbt_colloct"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="30dp"
+                android:button="@null"
+                android:drawableBottom="@drawable/selector_movie_rb_incator"
+                android:drawablePadding="-14dp"
+                android:gravity="center"
+                android:text="歌曲收藏"
+                android:fontFamily="@font/yc_font"
+                android:textColor="@drawable/selector_movie_rb_text"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </RadioGroup>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/hot_song_record_recycleview"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fm_dp_250"
+            android:layout_marginTop="@dimen/fm_dp_10"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="5"
+            app:layout_constraintTop_toBottomOf="@+id/rg"
+            tools:listitem="@layout/adapter_item_sound_info" />
+
+        <include
+            android:id="@+id/layout_loading"
+            layout="@layout/common_empty_img_text"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/hot_song_record_recycleview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/hot_song_record_recycleview"
+            android:visibility="gone"
+           />
+
+        <include
+            android:id="@+id/bottom_opera_layout"
+            layout="@layout/include_common_bottom_opera_layout"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/fm_dp_53"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_choose_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</FrameLayout>

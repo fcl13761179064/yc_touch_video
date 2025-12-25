@@ -1,0 +1,13 @@
+1、viewmodel应该存数据
+2、viewmodel应该被复用，比如commviewModel必须该复用
+3、回调逻辑混乱，一会主页面，一会fragment
+4、所有的接口失败都没有考虑  ！！！  开通单片后刷新失败   详情页请求失败   弹VIP弹层之前请求的价格失败=====
+
+replace fragment状态保存问题
+所有的搜索得考虑取消上一次的请求
+图片压缩
+
+某些视频在高版本安卓上崩溃（解决办法 android:allowNativeHeapPointerTagging="false"或者重新编译IJK？  https://github.com/bilibili/ijkplayer/issues/5206）现在先禁用arm64
+本地数据库对比异步问题
+
+视频播放seek控制，右边菜单控制UI

@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">欢畅K歌</string>
+
+
+    <string name="main_original">原唱</string>
+    <string name="main_banzhou">伴奏</string>
+    <string name="menu_quick_search_song">快捷点歌</string>
+    <string name="main_ensemble_txt">重唱</string>
+    <string name="main_cut_song_txt">切歌</string>
+    <string name="main_pause_txt">暂停</string>
+    <string name="main_voice_plus_txt">音量+</string>
+    <string name="menu_voice_sound_txt">音量</string>
+    <string name="main_voice_minus_txt">音量-</string>
+    <string name="main_voic_txt">音量</string>
+    <string name="app_setting_personal_txt">个人中心</string>
+    <string name="app_setting_personal_net">网络设置</string>
+    <string name="app_setting_song_txt">手机点歌</string>
+    <string name="app_seting_kg_txt_string">权益未开通或已过期</string>
+</resources>

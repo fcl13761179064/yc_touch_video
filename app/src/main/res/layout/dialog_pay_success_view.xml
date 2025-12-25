@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cs_all_view"
+    android:layout_width="match_parent"
+    android:clickable="true"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/fm_view_back"
+        android:layout_width="@dimen/fm_dp_380"
+        android:layout_height="@dimen/fm_dp_274"
+        android:clickable="true"
+        android:background="@drawable/fm_shape_all_success_radius_15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_success"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:src="@mipmap/ic_pay_success"
+        app:layout_constraintEnd_toEndOf="@id/fm_view_back"
+        app:layout_constraintStart_toStartOf="@id/fm_view_back"
+        app:layout_constraintTop_toTopOf="@id/fm_view_back" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_success"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="支付成功"
+        android:textColor="@color/white"
+        android:textSize="@dimen/fm_text_size_15"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/fm_view_back"
+        app:layout_constraintStart_toStartOf="@id/fm_view_back"
+        app:layout_constraintTop_toBottomOf="@id/img_success" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/order_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="购买类型:"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@id/fm_view_back"
+        app:layout_constraintStart_toStartOf="@id/fm_view_back"
+        app:layout_constraintTop_toBottomOf="@id/tv_success" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/order_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="购买类型:"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@id/fm_view_back"
+        app:layout_constraintStart_toStartOf="@id/fm_view_back"
+        app:layout_constraintTop_toBottomOf="@id/order_status" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/ok_success"
+        android:layout_width="@dimen/fm_dp_120"
+        android:layout_height="@dimen/fm_dp_30"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/fm_ff8157ff_ffe056ff_radis_15"
+        android:gravity="center"
+        android:text="确定"
+        android:textColor="@color/white"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="@id/fm_view_back"
+        app:layout_constraintStart_toStartOf="@id/fm_view_back"
+        app:layout_constraintTop_toBottomOf="@id/order_date" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/cancel_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/fm_dp_20"
+        android:src="@mipmap/ic_close_dialog_pay_success"
+        app:layout_constraintBottom_toTopOf="@id/fm_view_back"
+        app:layout_constraintEnd_toEndOf="@id/fm_view_back" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_filter_choose"
+    android:layout_width="@dimen/fm_dp_71"
+    android:layout_height="@dimen/fm_dp_20"
+    android:layout_marginStart="5dp"
+    android:layout_marginTop="@dimen/fm_dp_10"
+    android:background="@drawable/shape_movie_filter_choose_bg"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tv_filter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="7.5dp"
+        android:layout_marginEnd="3dp"
+        android:layout_weight="1"
+        android:maxLines="1"
+        android:text="喜剧"
+        android:textColor="#ffffffff"
+        android:textSize="11sp" />
+
+    <ImageView
+        android:id="@+id/img_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:paddingEnd="@dimen/fm_dp_4.5"
+        android:src="@mipmap/ic_delete_filter" />
+</LinearLayout>

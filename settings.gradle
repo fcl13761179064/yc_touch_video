@@ -1,0 +1,61 @@
+pluginManagement {
+    repositories {
+        mavenCentral()
+        google()
+        mavenLocal()
+        maven { url 'https://jitpack.io'}
+        maven { url 'https://maven.aliyun.com/repository/central/' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter/' }
+        maven { url 'https://maven.aliyun.com/repository/google/' }
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+    }
+
+
+}
+
+
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    // enableFeaturePreview("VERSION_CATALOGS")//8.0前需要申明启用versionCatalogs
+    versionCatalogs {
+        fmlibs {
+            from(files("./toml/fmlibs.versions.toml"))
+        }
+    }
+
+    repositories {
+        mavenCentral()
+        google()
+        mavenLocal()
+        maven { url 'https://jitpack.io'}
+        maven { url 'https://maven.aliyun.com/repository/central/' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter/' }
+        maven { url 'https://maven.aliyun.com/repository/google/' }
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven { url 'https://maven.aliyun.com/repository/gradle-plugin/' }
+//        dependencies {
+//            // 添加ARouter插件
+//            classpath 'com.alibaba:arouter-register:1.1.5'
+//        }
+    }
+}
+
+rootProject.name = "yc_sound"
+include(":app")
+include(":md_login")
+include(":common_framework")
+include ':md_network'
+include ':ktv_sdk'
+include ':animation'
+include ':room_database'
+
+include ':ijkplayer_exo'
+project(':ijkplayer_exo').projectDir = new File('sdk_video/ijkplayer-exo')
+
+include ':ijkplayer_java'
+project(':ijkplayer_java').projectDir = new File('sdk_video/ijkplayer-java')
+include ':movie_sdk'
+include (":websocketlib")
+include ':local_lib:ktv_lib'
+include ':blurviewlibrary'

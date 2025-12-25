@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/all_view"
+    android:layout_width="@dimen/fm_dp_250"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:background="@color/fm_cc000000"
+    >
+
+ <androidx.appcompat.widget.AppCompatImageView
+     android:id="@+id/close"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:src="@mipmap/img_close_topping"
+     android:layout_alignRight="@+id/ll_layout"
+     android:layout_marginBottom="@dimen/fm_dp_15"
+     android:layout_above="@+id/ll_layout"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll_layout"
+        android:layout_width="@dimen/fm_dp_190"
+        android:layout_height="@dimen/fm_dp_167"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/fm_dp_30"
+        android:layout_marginRight="@dimen/fm_dp_30"
+        android:layout_centerVertical="true"
+        android:background="@drawable/fm_shape_all_success_radius_15"
+        android:clickable="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:ellipsize="end"
+            android:maxEms="13"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="输了你赢了世界又如何输了"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fm_text_size_11" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_topping"
+            android:layout_width="@dimen/fm_dp_110"
+            android:layout_height="33dp"
+            android:layout_marginTop="@dimen/fm_dp_20"
+            android:layout_marginBottom="@dimen/fm_dp_10"
+            android:background="@drawable/fm_bg_shape_80ffffff_17"
+            android:gravity="center"
+            android:text="歌曲置顶"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fm_text_size_13" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ok_right_sing"
+            android:layout_width="@dimen/fm_dp_100"
+            android:layout_height="33dp"
+            android:background="@drawable/fm_bg_shape_80ffffff_17"
+            android:gravity="center"
+            android:text="立即唱"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fm_text_size_13" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</RelativeLayout>

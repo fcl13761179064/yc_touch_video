@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="#231654">
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/remove_all"
+        android:layout_width="@dimen/fm_dp_52"
+        android:layout_height="25dp"
+        android:background="@drawable/fm_remove_all_lrgics"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fm_dp_10"
+            android:src="@mipmap/fm_remove_clear" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="清空"
+            android:fontFamily="@font/yc_font"
+            android:layout_marginLeft="2dp"
+            android:textColor="@color/white"
+            android:textSize="10sp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_height="@dimen/fm_dp_250"
+        app:layout_constraintTop_toBottomOf="@id/remove_all" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll_page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_pre_page"
+            android:layout_width="@dimen/fm_dp_84"
+            android:layout_height="@dimen/fm_dp_28"
+            android:background="@drawable/shape_common_check_page"
+            android:drawableStart="@mipmap/img_no_pre_page"
+            android:textColor="@color/fm_33FFFFFF"
+            android:gravity="center"
+            android:paddingStart="@dimen/fm_dp_15"
+            android:paddingEnd="@dimen/fm_dp_15"
+            android:text="上一页"
+            android:fontFamily="@font/yc_font"
+            android:textSize="@dimen/fm_text_size_11"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_page"
+            android:layout_width="@dimen/fm_dp_50"
+            android:layout_height="@dimen/fm_dp_28"
+            android:gravity="center"
+            android:text="1"
+            android:fontFamily="@font/yc_font"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fm_text_size_11"
+            app:layout_constraintLeft_toRightOf="@+id/tv_pre_page"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--android:background="@drawable/shape_common_check_page"-->
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_next_page"
+            android:layout_width="@dimen/fm_dp_84"
+            android:layout_height="@dimen/fm_dp_28"
+            android:background="@drawable/shape_common_check_page"
+            android:drawableEnd="@mipmap/img_next_page"
+            android:gravity="center"
+            android:paddingStart="@dimen/fm_dp_15"
+            android:paddingEnd="@dimen/fm_dp_15"
+            android:text="下一页"
+            android:fontFamily="@font/yc_font"
+            android:textColor="@drawable/selector_movie_page_txt"
+            android:textSize="@dimen/fm_text_size_11"
+            app:layout_constraintLeft_toRightOf="@+id/tv_page"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.constraintlayout.widget.ConstraintLayout>

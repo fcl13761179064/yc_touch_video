@@ -1,0 +1,39 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdk 33
+    namespace 'tv.danmaku.ijk.media.player'
+    defaultConfig {
+        minSdk = 19
+        targetSdk = 33
+        versionCode = 1
+        versionName = "1.0"
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs', 'src/main/jniLibs']
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+
+    implementation fmlibs.material
+    implementation fmlibs.appcompat.appcompat
+    implementation fmlibs.constraintlayout
+
+//    implementation "com.google.android.material:material:$rootProject.androidXVersion"
+//    implementation "androidx.appcompat:appcompat:$rootProject.androidXVersion"
+//    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraint_version"
+}
+
+//apply from: new File(rootProject.projectDir, "tools/gradle-on-demand.gradle");

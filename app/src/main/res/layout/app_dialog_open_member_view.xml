@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/view_all"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    >
+
+    <View
+        android:id="@+id/view_back"
+        android:layout_width="520dp"
+        android:layout_height="@dimen/fm_dp_301"
+        android:clickable="true"
+        android:background="@mipmap/app_personal_moive_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/fm_dp_63"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@id/view_back"
+        app:layout_constraintStart_toStartOf="@id/view_back"
+        app:layout_constraintTop_toTopOf="@id/view_back">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1年内"
+            android:textColor="@color/fm_F05B1A_color"
+            android:textSize="13sp" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="可观看电影栏目所有影片"
+            android:textColor="#AEC9FF"
+            android:textSize="13sp" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <LinearLayout
+        android:id="@+id/pay_one_view"
+        android:layout_width="223dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="@dimen/fm_dp_99"
+        android:background="@drawable/selector_personal_dialog_video_vip"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@id/view_back"
+        app:layout_constraintTop_toTopOf="@id/view_back">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/pay_one_tv"
+            android:layout_width="83dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="¥4"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/pay_one_des"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/fm_dp_30"
+            android:gravity="center"
+            android:text="年卡"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/pay_two_view"
+        android:layout_width="223dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="8.5dp"
+        android:background="@drawable/selector_personal_dialog_video_vip"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@id/view_back"
+        app:layout_constraintTop_toBottomOf="@id/pay_one_view">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/pay_two_price"
+            android:layout_width="@dimen/fm_dp_83"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="¥4"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/pay_two_des"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/fm_dp_30"
+            android:gravity="center"
+            android:text="月卡"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="@dimen/fm_dp_150"
+        android:layout_height="@dimen/fm_dp_166"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="@dimen/fm_dp_99"
+        android:layout_marginEnd="@dimen/fm_dp_55"
+        android:background="@drawable/app_shape_personal_qy_white_bg"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="@id/view_back"
+        app:layout_constraintTop_toTopOf="@id/view_back">
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="扫码支付:"
+                android:textColor="@color/black"
+                android:textSize="@dimen/fm_text_size_11"
+                android:textStyle="bold" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_tt_moeny"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="3dp"
+                android:textColor="@color/fm_F05B1A_color"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="¥24" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:textColor="#4D222222"
+            android:textSize="10sp"
+            tools:text="11111" />
+
+
+        <FrameLayout
+            android:layout_width="@dimen/fm_dp_110"
+            android:layout_height="@dimen/fm_dp_110">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/qd_ewm_img"
+                android:layout_width="@dimen/fm_dp_110"
+                android:layout_height="@dimen/fm_dp_110"
+                android:scaleType="centerCrop" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@mipmap/fm_common_wechat" />
+        </FrameLayout>
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/cancel_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:src="@mipmap/app_close_img"
+        app:layout_constraintBottom_toTopOf="@id/view_back"
+        app:layout_constraintEnd_toEndOf="@id/view_back" />
+</androidx.constraintlayout.widget.ConstraintLayout>

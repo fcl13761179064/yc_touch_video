@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="#231654">
+
+    <RadioGroup
+        android:id="@+id/rg_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/fm_dp_28"
+        android:layout_marginStart="@dimen/fm_dp_20"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/rb_hot"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/fm_dp_28"
+            android:layout_marginEnd="@dimen/fm_dp_15"
+            android:background="@null"
+            android:button="@null"
+            android:drawableBottom="@drawable/selector_movie_rb_incator"
+            android:drawablePadding="-14dp"
+            android:gravity="center"
+            android:paddingBottom="4dp"
+            android:text="影片推荐"
+            android:fontFamily="@font/yc_font"
+            android:textColor="@drawable/selector_movie_rb_text"
+            android:textStyle="bold" />
+
+
+        <RadioButton
+            android:id="@+id/rb_all"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/fm_dp_28"
+            android:background="@null"
+            android:button="@null"
+            android:drawableBottom="@drawable/selector_movie_rb_incator2"
+            android:drawablePadding="-14dp"
+            android:gravity="center"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="4dp"
+            android:text="全部"
+            android:fontFamily="@font/yc_font"
+            android:textColor="@drawable/selector_movie_rb_text"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/rb_new"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/fm_dp_28"
+            android:background="@null"
+            android:button="@null"
+            android:drawableBottom="@drawable/selector_movie_rb_incator2"
+            android:drawablePadding="-14dp"
+            android:gravity="center"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:paddingBottom="4dp"
+            android:text="新片"
+            android:fontFamily="@font/yc_font"
+            android:textColor="@drawable/selector_movie_rb_text"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/rb_collect"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/fm_dp_28"
+            android:layout_marginStart="@dimen/fm_dp_15"
+            android:layout_marginEnd="@dimen/fm_dp_30"
+            android:background="@null"
+            android:button="@null"
+            android:drawableBottom="@drawable/selector_movie_rb_incator"
+            android:drawablePadding="-14dp"
+            android:gravity="center"
+            android:paddingBottom="4dp"
+            android:text="电影收藏"
+            android:fontFamily="@font/yc_font"
+            android:textColor="@drawable/selector_movie_rb_text"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/rb_search"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/fm_dp_28"
+            android:background="@null"
+            android:button="@null"
+            android:drawableBottom="@drawable/selector_movie_rb_incator"
+            android:drawablePadding="-14dp"
+            android:gravity="center"
+            android:paddingBottom="4dp"
+            android:text="搜索结果"
+            android:fontFamily="@font/yc_font"
+            android:textColor="#FFB756"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+    </RadioGroup>
+
+
+    <FrameLayout
+        android:id="@+id/fl_choose_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rg_menu" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_filter"
+        android:layout_width="@dimen/fm_dp_75"
+        android:layout_height="@dimen/fm_dp_28"
+        android:layout_marginEnd="@dimen/fm_dp_10"
+        android:background="@drawable/shape_bg_movie_fliter"
+        android:drawableStart="@mipmap/ic_fliter_left"
+        android:drawableEnd="@mipmap/ic_fliter_right"
+        android:gravity="center"
+        android:paddingStart="@dimen/fm_dp_17"
+        android:paddingEnd="6dp"
+        android:text="筛选"
+        android:fontFamily="@font/yc_font"
+        android:textColor="#ffffff"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/fl_choose_container"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+</androidx.constraintlayout.widget.ConstraintLayout>

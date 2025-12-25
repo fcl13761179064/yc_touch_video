@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_movie"
+    android:layout_width="@dimen/fm_dp_67.5"
+    android:layout_height="@dimen/fm_dp_112.5"
+    android:layout_marginEnd="@dimen/fm_dp_10">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_movie_img"
+        android:layout_width="@dimen/fm_dp_67.5"
+        android:layout_height="@dimen/fm_dp_90"
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/fm_CircleStyle_5" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/at_star_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:ellipsize="end"
+        android:fontFamily="@font/yc_font"
+        android:maxLines="1"
+        android:textColor="#ffffffff"
+        android:textSize="12sp"
+        tools:text="周杰伦" />
+</FrameLayout>

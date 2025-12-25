@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- HeaderBar自定义属性 -->
+    <declare-styleable name="fm_HeaderBar">
+        <attr name="fmIsShowBack" format="boolean" />
+        <attr name="fmTitleText" format="string" />
+        <attr name="fmTightText" format="string" />
+    </declare-styleable>
+
+    <!-- HeaderBar自定义属性 -->
+    <declare-styleable name="fm_NPHeaderBar">
+        <attr name="fm_showBack" format="boolean" />
+        <attr name="fm_showElevation" format="boolean" />
+        <attr name="fm_title" format="string" />
+        <attr name="fm_leftImg" format="reference" />
+        <attr name="fm_leftText" format="string" />
+        <attr name="fm_rightText" format="string" />
+        <attr name="fm_rightImg" format="reference" />
+        <attr name="fm_background" format="color|reference" />
+        <attr name="fm_rightTextColor" format="color" />
+    </declare-styleable>
+
+    <style name="fm_BottomDialogDim" parent="fm_CommonDialog">
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.4</item>
+    </style>
+
+</resources>

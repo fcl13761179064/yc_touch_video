@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="@dimen/fm_dp_30"
+    android:layout_marginTop="@dimen/fm_dp_30"
+    android:layout_marginEnd="@dimen/fm_dp_15"
+    android:orientation="vertical"
+    tools:background="#231654">
+
+    <FrameLayout
+        android:id="@+id/view_agree"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/shape_bg_personal_about">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="15dp"
+            android:text="用户服务协议及隐私保护政策"
+            android:gravity="center"
+            android:fontFamily="@font/yc_font"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fm_text_size_13" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="@dimen/fm_dp_60"
+            android:layout_height="20dp"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/fm_bg_shape_ffdc3fff_ff6836ff_12"
+            android:gravity="center"
+            android:text="查看详情"
+            android:fontFamily="@font/yc_font"
+            android:textColor="@color/white"
+            android:textSize="10sp" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/view_wecome"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_bg_personal_about"
+        android:gravity="center_vertical"
+        tools:ignore="MissingConstraints">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/fm_dp_15"
+            android:text="版权声明"
+            android:fontFamily="@font/yc_font"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fm_text_size_13" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/fm_bg_shape_ffdc3fff_ff6836ff_12"
+            android:layout_gravity="end|center"
+            android:gravity="center"
+            android:text="查看详情"
+            android:fontFamily="@font/yc_font"
+            android:textColor="@color/white"
+            android:textSize="10sp" />
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:id="@+id/view_update"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_bg_personal_about"
+        android:gravity="center_vertical"
+        tools:ignore="MissingConstraints">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/fm_dp_15"
+            android:text="当前版本"
+            android:fontFamily="@font/yc_font"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fm_text_size_13" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/version_nametv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_weight="1"
+            android:text="1.1.1"
+            android:fontFamily="@font/yc_font"
+            android:textColor="#F05B1A"
+            android:textSize="@dimen/fm_text_size_13" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="@dimen/fm_dp_70"
+            android:layout_height="20dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/fm_bg_shape_ffdc3fff_ff6836ff_12"
+            android:gravity="center"
+            android:text="检查新版本"
+            android:fontFamily="@font/yc_font"
+            android:textColor="@color/white"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/fm_dp_21"
+        android:gravity="center"
+        android:fontFamily="@font/yc_font"
+        android:text="全民K歌曲库由腾讯音乐娱乐（深圳）有限公司所有"
+        android:textColor="#5CFFFFFF"
+        android:textSize="10sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_mac"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/fm_dp_10"
+        tools:text="MAC：00:05:29:C0:14:e8"
+        android:textColor="#5CFFFFFF"
+        android:fontFamily="@font/yc_font"
+        android:textSize="10sp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_ip_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/fm_dp_10"
+        tools:text="IP地址："
+        android:textColor="#5CFFFFFF"
+        android:fontFamily="@font/yc_font"
+        android:textSize="10sp" />
+</androidx.appcompat.widget.LinearLayoutCompat>
+

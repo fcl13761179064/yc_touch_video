@@ -1,0 +1,72 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+
+@SuppressWarnings("GrMethodMayBeStatic")
+String getSdkBaseUrl() {
+    switch (rootProject.ext.qa_environment) {
+        case rootProject.ext.ENVIRONMENT.TEST:
+            return rootProject.ext.TEST_SDK_URL
+        default:
+            return rootProject.ext.PROD_SDK_URL
+    }
+}
+
+android {
+    namespace 'com.qm.sdk'
+    compileSdk 33
+
+    defaultConfig {
+        minSdk = 19
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "BASE_URL", "\"${getSdkBaseUrl()}\"")
+            buildConfigField("Boolean", "IS_DEBUG", "false")
+
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "BASE_URL", "\"${getSdkBaseUrl()}\"")
+            buildConfigField("Boolean", "IS_DEBUG", "true")
+        }
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    resourcePrefix = "ktv_"
+
+
+}
+
+
+dependencies {
+    implementation project(":common_framework")
+/*    //exoplayer核心ktv核心插件 全民k歌需要的这2种player
+    implementation "com.google.android.exoplayer:exoplayer-core:2.14.0"
+    //exoplayer适配hls
+    implementation 'com.google.android.exoplayer:exoplayer-hls:2.14.0'*/
+    //exoplayer核心
+    implementation("com.google.android.exoplayer:exoplayer-core:2.18.5") {
+        exclude group: 'androidx.core'
+        exclude group: 'androidx.annotation'
+        exclude group: 'androidx.fragment'
+    }
+
+    api(project(':local_lib:ktv_lib'))
+}

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cs_check_video"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ksong.support.video.ktv.KtvVideoLayout
+        android:id="@+id/video_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ai_no_mv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+      />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cs_web_qr"
+        android:layout_width="@dimen/fm_dp_75"
+        android:layout_height="@dimen/fm_dp_94"
+        android:layout_gravity="right"
+        android:layout_marginTop="@dimen/fm_dp_75"
+        android:layout_marginRight="@dimen/fm_dp_22"
+        android:background="@mipmap/play_web_qr"
+        android:visibility="gone">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/qr_web"
+            android:layout_width="66dp"
+            android:layout_height="@dimen/fm_dp_66"
+            android:layout_marginTop="@dimen/fm_dp_4.5"
+            android:background="@color/fm_white"
+            android:scaleType="fitXY"
+            app:layout_constraintLeft_toLeftOf="@+id/cs_web_qr"
+            app:layout_constraintRight_toRightOf="@+id/cs_web_qr"
+            app:layout_constraintTop_toTopOf="@+id/cs_web_qr"
+            app:shapeAppearanceOverlay="@style/fm_CircleStyle_5.5" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/fm_dp_15"
+            android:layout_height="@dimen/fm_dp_15"
+            android:background="@mipmap/fm_common_wechat"
+            app:layout_constraintBottom_toBottomOf="@+id/qr_web"
+            app:layout_constraintLeft_toLeftOf="@+id/qr_web"
+            app:layout_constraintRight_toRightOf="@+id/qr_web"
+            app:layout_constraintTop_toTopOf="@+id/qr_web" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <com.tme.ktv.lyric.widget.LyricView
+        android:id="@+id/lyric_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fm_dp_145"
+        android:layout_gravity="bottom"
+        android:background="@android:color/transparent"
+        app:layoutMode="ktv"
+        app:lightTextColor="@color/fm_color_3548ff"
+        app:lightTextFont="@font/fangzheng_font"
+        app:lightTextSize="6sp"
+        app:lightUnselectTextColor="@android:color/white"
+        app:lightUnselectTextFont="@font/fangzheng_font"
+        app:lightUnselectTextStrokeColor="@android:color/black"
+        app:lightUnselectTextStrokeWidth="3"
+        app:lineNumber="2"
+        app:lyricBackgroundColor="@color/transparent"
+        app:shadowColor="@color/transparent"
+        app:shadowEnable="true"
+        app:strokeColor="@android:color/white"
+        app:strokeW="3"
+        app:textColor="@android:color/white"
+        app:textFont="@font/fangzheng_font"
+        app:textSize="6sp"
+        app:textStrokeColor="@color/fm_color_ff000000"
+        app:textStrokeWidth="3" />
+
+    <com.lucky.sound.main.widget.LrcTimeCicle
+        android:id="@+id/lrc_circleView"
+        android:layout_width="150dp"
+        android:layout_height="22.5dp"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="150dp"
+        android:visibility="gone"
+        />
+</FrameLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/comment_pop_window"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/fm_bg_shape_ffdc3fff_ff6836ff_5">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/fm_dp_124"
+        android:layout_height="@dimen/fm_dp_95"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/topping_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/fm_dp_18.5"
+        android:layout_marginTop="@dimen/fm_dp_15"
+        android:drawableStart="@mipmap/img_topping_unselect"
+        android:text="歌曲置顶"
+        android:gravity="right|center"
+        android:paddingEnd="@dimen/fm_dp_17"
+        android:textColor="@color/white"
+        android:textSize="@dimen/fm_text_size_13"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_right_sing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/fm_dp_18.5"
+        android:layout_marginTop="@dimen/fm_dp_15"
+        android:drawableStart="@mipmap/img_right_sing"
+        android:gravity="right|center"
+        android:paddingEnd="@dimen/fm_dp_30.5"
+        android:text="立即唱"
+        android:textColor="@color/white"
+        android:textSize="@dimen/fm_text_size_13"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topping_btn" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout></androidx.constraintlayout.widget.ConstraintLayout>

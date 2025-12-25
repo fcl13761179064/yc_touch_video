@@ -1,0 +1,51 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdk 33
+    namespace 'tv.danmaku.ijk.media.exo'
+    defaultConfig {
+        minSdk = 19
+        targetSdk = 33
+        versionCode = 1
+        versionName = "1.0"
+    }
+    lintOptions {
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.google.android.exoplayer:exoplayer:r1.5.11'
+
+    implementation project(':ijkplayer_java')
+
+
+
+    implementation fmlibs.material
+    implementation fmlibs.appcompat.appcompat
+    implementation fmlibs.constraintlayout
+
+
+    //  implementation "com.google.android.material:material:$rootProject.androidXVersion"
+    // implementation "androidx.appcompat:appcompat:$rootProject.androidXVersion"
+    // implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraint_version"
+
+    // compile 'tv.danmaku.ijk.media:ijkplayer-java:0.8.8'
+}
+
+//gradle.startParameter.taskNames.each { task ->
+//    def subProjectName = task;
+//    if (task.startsWith(':'))
+//        subProjectName = task.split(":")[1]
+//    if (subProjectName.equals(project.name))
+//        apply from: new File(rootProject.projectDir, "tools/gradle-on-demand.gradle");
+//}

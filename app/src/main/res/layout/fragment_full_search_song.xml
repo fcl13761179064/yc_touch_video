@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fl_full_search"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_content"
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:background="#222222"
+        android:clickable="true">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_hot"
+            android:layout_width="wrap_content"
+            android:layout_height="26.5dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/selector_movie_rb_incator"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:text="热门歌曲"
+            android:textColor="#ffffffff"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/yc_font"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_return"
+            android:layout_width="@dimen/fm_dp_75"
+            android:layout_height="@dimen/fm_dp_28"
+            android:layout_marginRight="@dimen/fm_dp_15"
+            android:background="@drawable/common_ff05b1a_back_bg"
+            android:drawableStart="@mipmap/img_back_common_page"
+            android:gravity="center"
+            android:paddingStart="@dimen/fm_dp_14"
+            android:paddingEnd="@dimen/fm_dp_12"
+            android:text="返回"
+            android:fontFamily="@font/yc_font"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fm_text_size_13"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_hot"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_hot" />
+
+        <com.common.framework.view.RefreshLayout
+            android:id="@+id/refreshView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_hot">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/hot_RecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:paddingTop="@dimen/fm_dp_10"
+                tools:itemCount="25"
+                tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/adapter_item_full_hot_song" />
+
+        </com.common.framework.view.RefreshLayout>
+
+        <include
+            android:id="@+id/layout_loading"
+            layout="@layout/common_progress_loading"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_hot" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <com.lucky.sound.main.fragment.search_box_fragment.SearchFullBoxView
+        android:id="@+id/searchFullSoftView"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="250dp"
+        android:background="#222222" />
+
+    <FrameLayout
+        android:id="@+id/fl_choose_container"
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:background="#222222"
+        android:visibility="gone" />
+
+</FrameLayout>
+

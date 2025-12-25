@@ -1,0 +1,224 @@
+image: aylacn/android-build:28-jdk8
+
+variables:
+  GRADLE_OPTS: "-Dorg.gradle.daemon=false" # 禁用 gradle 守护进程
+
+#//每个任务之前执行的脚本，但是会在artifacts恢复之后执行
+before_script:
+  - chmod +x gradlew
+  - chmod +x ./QARobot.sh
+  - export PATH="/opt/homebrew/bin:$PATH"
+  - export ANDROID_HOME=/Users/ayla/Library/Android/sdk
+  - export JAVA_HOME=/Users/ayla/Library/Android/java11
+  - export PATH="JAVA_HOME/bin:$PATH"
+  - export VERSION_NAME=`egrep '^[[:blank:]]+versionName[[:blank:]]'  app/build.gradle | awk '{print $2}' | sed s/\"//g`
+  - echo "App version name ${VERSION_NAME}"
+
+stages:
+  - lint
+  - signing_prepare
+  - signing_prepare_tag
+  - assemble
+  - assemble_canary
+  - assemble_prod
+  - publish
+  - publish_canary
+  - publish_prod
+  - publish_prod_hotfix
+
+job_lint:
+  stage: lint
+  script:
+    - echo "开始Lint"
+    - ./gradlew -Pci --console=plain :app:lintQaRelease -PbuildDir=lint
+    - echo "Lint结束"
+  tags:
+    - iOS
+  except:
+    refs:
+      - master
+
+job_signing_prepare_tag:
+  stage: signing_prepare_tag
+  script:
+    - echo "开始创建签名文件"
+    - echo $JKS_BASE64 | base64 -d > miya.jks
+    - echo "storePassword=$storePassword" > signing.properties
+    - echo "keyPassword=$keyPassword" >> signing.properties
+    - echo "keyAlias=$keyAlias" >> signing.properties
+    - echo "创建签名文件结束"
+  only:
+    refs:
+      - tag
+      - /.*(canary)$/
+      - /.*(prod)$/
+      - /.*(hotfix)$/
+      - /.*(camera)$/
+  artifacts:
+    paths:
+      - miya.jks
+      - signing.properties
+  tags:
+    - iOS
+
+job_signing_prepare:
+  stage: signing_prepare
+  script:
+    - echo "开始创建签名文件"
+    - echo $JKS_BASE64 | base64 -d > miya.jks
+    - echo "storePassword=$storePassword" > signing.properties
+    - echo "keyPassword=$keyPassword" >> signing.properties
+    - echo "keyAlias=$keyAlias" >> signing.properties
+    - echo "创建签名文件结束"
+  only:
+    refs:
+      - QA
+      - camera
+      - hotfix
+    changes:
+      - CHANGELOG.MD
+  artifacts:
+    paths:
+      - miya.jks
+      - signing.properties
+  tags:
+    - iOS
+
+job_assemble_canary:
+  stage: assemble_canary
+  only:
+    refs:
+      - tag
+      - /.*(canary)$/
+  script:
+    - echo "开始打包"
+    - ./gradlew :app:assembleCanaryRelease
+    - echo "打包结束"
+  artifacts:
+    paths:
+      - app/build/outputs/apk/canary/
+  tags:
+    - iOS
+
+job_assemble_prod:
+  stage: assemble_prod
+  only:
+    refs:
+      - tag
+      - /.*(prod)$/
+      - /.*(hotfix)$/
+  script:
+    - echo "开始打包"
+    - ./gradlew :app:assembleProdRelease
+    - echo "打包结束"
+  artifacts:
+    paths:
+      - app/build/outputs/apk/prod/
+  tags:
+    - iOS
+  except:
+    refs:
+      - camera
+
+job_assemble:
+  stage: assemble
+  only:
+    refs:
+      - QA
+      - camera
+    changes:
+      - CHANGELOG.MD
+  script:
+    - echo "开始打包"
+    - ./gradlew :app:assembleQaRelease
+    - echo "打包结束"
+  artifacts:
+    paths:
+      - app/build/outputs/apk/qa/
+  tags:
+    - iOS
+
+job_publish_canary:
+  stage: publish_canary
+  only:
+    refs:
+      - tag
+      - /.*(canary)$/
+  script:
+    - echo "开始上传APP到蒲公英"
+    - echo "pgyer_api_key=$pgyer_api_key"
+    - buildUpdateDescription=$(cat CHANGELOG.MD | head -n 6)
+    - echo "buildUpdateDescription=$buildUpdateDescription"
+    - pgyerBuildKey=`curl -F 'file=@app/build/outputs/apk/canary/release/app-canary-release.apk' -F "_api_key=$pgyer_api_key" -F "buildUpdateDescription=$buildUpdateDescription" https://www.pgyer.com/apiv2/app/upload | jq '.data.buildKey' | sed s/\"//g`
+    - echo "pgyerBuildKey = ${pgyerBuildKey}"
+    - echo "上传APP到蒲公英结束"
+    - echo "开始发布版本更新提示"
+    - echo "VERSION_NAME ${VERSION_NAME}"
+    - ./QARobot.sh "${VERSION_NAME}" "${pgyerBuildKey}" "Stage"
+    - echo "结束发布版本更新提示"
+  tags:
+    - iOS
+
+job_publish:
+  stage: publish
+  only:
+    refs:
+      - QA
+      - camera
+    changes:
+      - CHANGELOG.MD
+  script:
+    - echo "开始上传APP到蒲公英"
+    - echo "pgyer_api_key=$pgyer_api_key"
+    - buildUpdateDescription=$(cat CHANGELOG.MD | head -n 6)
+    - echo "buildUpdateDescription=$buildUpdateDescription"
+    - pgyerBuildKey=`curl -F 'file=@app/build/outputs/apk/qa/release/app-qa-release.apk' -F "_api_key=$pgyer_api_key" -F "buildUpdateDescription=$buildUpdateDescription" https://www.pgyer.com/apiv2/app/upload | jq '.data.buildKey' | sed s/\"//g`
+    - echo "pgyerBuildKey = ${pgyerBuildKey}"
+    - echo "上传APP到蒲公英结束"
+    - echo "开始发布版本更新提示"
+    - echo "VERSION_NAME ${VERSION_NAME}"
+    - ./QARobot.sh "${VERSION_NAME}" "${pgyerBuildKey}" "QA"
+    - echo "结束发布版本更新提示"
+  tags:
+    - iOS
+
+job_publish_prod:
+  stage: publish_prod
+  only:
+    refs:
+      - /.*(prod)$/
+  script:
+    - echo "开始上传APP到蒲公英"
+    - echo "pgyer_api_key=$pgyer_api_key"
+    - buildUpdateDescription=$(cat CHANGELOG.MD | head -n 6)
+    - echo "buildUpdateDescription=$buildUpdateDescription"
+    - pgyerBuildKey=`curl -F 'file=@app/build/outputs/apk/prod/release/app-prod-release.apk' -F "_api_key=$pgyer_api_key" -F "buildUpdateDescription=$buildUpdateDescription" https://www.pgyer.com/apiv2/app/upload | jq '.data.buildKey' | sed s/\"//g`
+    - echo "pgyerBuildKey = ${pgyerBuildKey}"
+    - echo "上传APP到蒲公英结束"
+    - echo "开始发布版本更新提示"
+    - echo "VERSION_NAME ${VERSION_NAME}"
+    - ./QARobot.sh "${VERSION_NAME}" "${pgyerBuildKey}" "PROD"
+    - echo "结束发布版本更新提示"
+  tags:
+    - iOS
+
+job_publish_prod_hotfix:
+    stage: publish_prod_hotfix
+    only:
+      refs:
+        - /.*(hotfix)$/
+    script:
+      - echo "开始上传APP到蒲公英"
+      - echo "pgyer_api_key=$pgyer_api_key"
+      - buildUpdateDescription=$(cat CHANGELOG.MD | head -n 6)
+      - echo "buildUpdateDescription=$buildUpdateDescription"
+      - pgyerBuildKey=`curl -F 'file=@app/build/outputs/apk/prod/release/app-prod-release.apk' -F "_api_key=$pgyer_api_key" -F "buildUpdateDescription=$buildUpdateDescription" https://www.pgyer.com/apiv2/app/upload | jq '.data.buildKey' | sed s/\"//g`
+      - echo "pgyerBuildKey = ${pgyerBuildKey}"
+      - echo "上传APP到蒲公英结束"
+      - echo "开始发布版本更新提示"
+      - echo "VERSION_NAME ${VERSION_NAME}"
+      - ./QARobot.sh "${VERSION_NAME}" "${pgyerBuildKey}" "HOTFIX"
+      - echo "结束发布版本更新提示"
+    tags:
+      - iOS
+

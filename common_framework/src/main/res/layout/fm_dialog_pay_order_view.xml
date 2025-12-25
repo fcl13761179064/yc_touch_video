@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cancel_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    >
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/fm_view_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:src="@mipmap/fm_meng_ceng_close"
+        app:layout_constraintBottom_toTopOf="@id/view_left_back"
+        app:layout_constraintEnd_toEndOf="@id/view_right_back" />
+
+    <View
+        android:id="@+id/view_left_back"
+        android:layout_width="@dimen/fm_dp_146"
+        android:layout_height="@dimen/fm_dp_260"
+        android:clickable="true"
+        android:background="@drawable/fm_shape_pay_order_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/view_right_back"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view_right_back"
+        android:layout_width="@dimen/fm_dp_200"
+        android:layout_height="@dimen/fm_dp_260"
+        android:clickable="true"
+        android:background="@drawable/fm_shape_pay_order_right"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/view_left_back"
+        app:layout_constraintTop_toTopOf="@id/view_left_back" />
+
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_movie_img"
+        android:layout_width="@dimen/fm_dp_90"
+        android:layout_height="@dimen/fm_dp_120"
+        app:layout_constraintBottom_toTopOf="@id/tv_title"
+        app:layout_constraintEnd_toEndOf="@id/view_left_back"
+        app:layout_constraintStart_toStartOf="@id/view_left_back"
+        app:layout_constraintTop_toTopOf="@id/view_left_back"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:shapeAppearanceOverlay="@style/fm_CircleStyle_5" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="生化危机: 启示录"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/view_left_back"
+        app:layout_constraintEnd_toEndOf="@id/view_left_back"
+        app:layout_constraintStart_toStartOf="@id/view_left_back"
+        app:layout_constraintTop_toBottomOf="@id/iv_movie_img" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_buy_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/fm_dp_10"
+        android:text="购买该片"
+        android:textColor="#401F0B"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/view_right_back"
+        app:layout_constraintStart_toStartOf="@id/view_right_back"
+        app:layout_constraintTop_toTopOf="@id/view_right_back" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@id/view_right_back"
+        app:layout_constraintStart_toStartOf="@id/view_right_back"
+        app:layout_constraintTop_toBottomOf="@id/tv_buy_title">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/at_watch_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="24小时内"
+            android:textColor="#F05B1A"
+            android:textSize="10sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="可观看"
+            android:textColor="#401F0B"
+            android:textSize="10sp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <View
+        android:id="@+id/view_code_back"
+        android:layout_width="@dimen/fm_dp_150"
+        android:layout_height="@dimen/fm_dp_150"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/fm_shape_login_out_white_bg"
+        app:layout_constraintEnd_toEndOf="@id/view_right_back"
+        app:layout_constraintStart_toStartOf="@id/view_right_back"
+        app:layout_constraintTop_toBottomOf="@id/ll_time" />
+
+    <FrameLayout
+        android:layout_width="@dimen/fm_dp_110"
+        android:layout_height="@dimen/fm_dp_110"
+        app:layout_constraintEnd_toEndOf="@id/view_code_back"
+        app:layout_constraintStart_toStartOf="@id/view_code_back"
+        app:layout_constraintBottom_toBottomOf="@id/view_code_back"
+        app:layout_constraintTop_toTopOf="@id/view_code_back">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/qd_ewm_img"
+            android:layout_width="@dimen/fm_dp_110"
+            android:layout_height="@dimen/fm_dp_110"
+            android:layout_gravity="center"
+            android:layout_marginTop="2dp"
+            android:scaleType="centerCrop" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@mipmap/fm_common_wechat" />
+    </FrameLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="54dp"
+        android:layout_height="@dimen/fm_dp_20"
+        android:layout_marginTop="11dp"
+        android:background="@drawable/fm_shape_pay_over_view"
+        android:gravity="center"
+        android:text="我已付款"
+        android:textColor="#F05B1A"
+        android:textSize="9sp"
+        app:layout_constraintEnd_toEndOf="@id/view_code_back"
+        app:layout_constraintStart_toStartOf="@id/view_code_back"
+        app:layout_constraintTop_toBottomOf="@id/view_code_back" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

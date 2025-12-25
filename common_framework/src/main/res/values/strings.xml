@@ -1,0 +1,23 @@
+<resources>
+
+    <string name="fm_cancel">cancel</string>
+    <string name="fm_complete">complete</string>
+    <string name="fm_gender">gender</string>
+    <string name="fm_permission_rationale_message">For the normal operation of the app, please agree to this permission</string>
+    <string name="fm_permission_denied_forever_message"> You have denied this permission. In order for you to use the app normally, please go to Settings to enable this permission</string>
+
+    <string name="fm_sunsay_format">Sun</string>
+    <string name="fm_thuresday_format">Thu</string>
+    <string name="fm_monday_format">Mon</string>
+    <string name="fm_morning_format">AM</string>
+    <string name="fm_tuesday_format">Tue</string>
+    <string name="fm_wednesday_format">Wed</string>
+    <string name="fm_friday_format">Fri</string>
+    <string name="fm_saturday_format">Sat</string>
+    <string name="fm_noon_format">PM</string>
+    <string name="fm_yesterday_format">Yesterday</string>
+    <string name="fm_year_format">/</string>
+    <string name="fm_month_format">/</string>
+    <string name="fm_day_format"/>
+    <string name="fm_phone_status_txt">App需要获取手机信息权限</string>
+</resources>

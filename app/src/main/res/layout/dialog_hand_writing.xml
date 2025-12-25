@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cs_shouxie"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#88000000"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+    <!--android:background="@color/fm_80FFFFFF"-->
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="@+id/cs_text_layout"
+        android:layout_marginTop="@dimen/fm_dp_105"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="@dimen/fm_dp_13"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/search_text"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fm_dp_28"
+            android:background="@drawable/app_bg_search_box"
+            android:drawableLeft="@mipmap/img_search_box"
+            android:drawablePadding="@dimen/fm_dp_5"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/fm_dp_10"
+            android:textColor="@color/white"
+            android:textColorHint="@color/fm_color_ffc64eff"
+            android:textSize="@dimen/fm_text_size_10"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/at_delete_all"
+            android:layout_width="@dimen/fm_dp_80"
+            android:layout_height="@dimen/fm_dp_23"
+            android:layout_marginTop="5dp"
+            android:drawableLeft="@mipmap/btn_delect_all_img"
+            android:drawablePadding="@dimen/fm_dp_4"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/fm_dp_18"
+            android:text="清空"
+            android:textColor="@color/fm_ccffffff"
+            android:textSize="@dimen/fm_text_size_10"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/search_text" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="@dimen/fm_dp_10"
+            android:background="@color/fm_1AFFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/at_delete_all"
+            app:layout_constraintLeft_toRightOf="@+id/at_delete_all"
+            app:layout_constraintTop_toTopOf="@+id/at_delete_all" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/at_delete_one"
+            android:layout_width="@dimen/fm_dp_80"
+            android:layout_height="@dimen/fm_dp_23"
+            android:layout_marginTop="5dp"
+            android:drawableLeft="@mipmap/btn_delect_one_img"
+            android:drawablePadding="@dimen/fm_dp_5"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/fm_dp_18"
+            android:text="退格"
+            android:textColor="@color/white"
+            android:textSize="@dimen/fm_text_size_10"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/search_text" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--<androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/text_recycleview"
+        android:layout_width="@dimen/fm_dp_167"
+        android:layout_height="217.5dp"
+        android:layout_marginTop="@dimen/fm_dp_170"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:spanCount="4"
+        tools:itemCount="10"
+        tools:listitem="@layout/adapter_keybord_box" />
+-->
+
+    <com.lucky.sound.main.handwriting.SecondSurfaceView
+        android:id="@+id/surface_view"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/cs_text_layout" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cs_text_layout"
+        android:layout_width="@dimen/fm_dp_167"
+        android:layout_height="217.5dp"
+        android:layout_marginTop="@dimen/fm_dp_170"
+        android:layout_marginRight="@dimen/fm_dp_13"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!--选择文字-->
+        <TextView
+            android:id="@+id/tv_xuanze1"
+            android:layout_width="@dimen/fm_dp_45"
+            android:layout_height="@dimen/fm_dp_45"
+            android:background="@drawable/selector_handwrite_text_bg"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/fm_white"
+            android:textSize="15sp"
+            android:visibility="visible"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_xuanze2"
+            android:layout_width="@dimen/fm_dp_45"
+            android:layout_height="@dimen/fm_dp_45"
+            android:layout_marginLeft="@dimen/fm_dp_16"
+            android:background="@drawable/selector_handwrite_text_bg"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/fm_white"
+            android:textSize="15sp"
+            android:visibility="visible"
+            app:layout_constraintLeft_toRightOf="@+id/tv_xuanze1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_xuanze3"
+            android:layout_width="@dimen/fm_dp_45"
+            android:layout_height="@dimen/fm_dp_45"
+            android:layout_marginLeft="@dimen/fm_dp_16"
+            android:background="@drawable/selector_handwrite_text_bg"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/fm_white"
+            android:textSize="15sp"
+            android:visibility="visible"
+            app:layout_constraintLeft_toRightOf="@+id/tv_xuanze2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_xuanze4"
+            android:layout_width="@dimen/fm_dp_45"
+            android:layout_height="@dimen/fm_dp_45"
+            android:layout_marginTop="@dimen/fm_dp_12.5"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/selector_handwrite_text_bg"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/fm_white"
+            android:textSize="15sp"
+            android:visibility="visible"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_xuanze1" />
+
+        <TextView
+            android:id="@+id/tv_xuanze5"
+            android:layout_width="@dimen/fm_dp_45"
+            android:layout_height="@dimen/fm_dp_45"
+            android:layout_marginLeft="@dimen/fm_dp_16"
+            android:layout_marginTop="@dimen/fm_dp_12.5"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/selector_handwrite_text_bg"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/fm_white"
+            android:textSize="15sp"
+            android:visibility="visible"
+            app:layout_constraintLeft_toRightOf="@+id/tv_xuanze4"
+            app:layout_constraintTop_toBottomOf="@+id/tv_xuanze2" />
+
+        <TextView
+            android:id="@+id/tv_xuanze6"
+            android:layout_width="@dimen/fm_dp_45"
+            android:layout_height="@dimen/fm_dp_45"
+            android:layout_marginLeft="@dimen/fm_dp_16"
+            android:layout_marginTop="@dimen/fm_dp_12.5"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/selector_handwrite_text_bg"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/fm_white"
+            android:textSize="15sp"
+            android:visibility="visible"
+            app:layout_constraintLeft_toRightOf="@+id/tv_xuanze5"
+            app:layout_constraintTop_toBottomOf="@+id/tv_xuanze3" />
+
+        <TextView
+            android:id="@+id/tv_xuanze7"
+            android:layout_width="@dimen/fm_dp_45"
+            android:layout_height="@dimen/fm_dp_45"
+            android:layout_marginTop="@dimen/fm_dp_12.5"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/selector_handwrite_text_bg"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/fm_white"
+            android:textSize="15sp"
+            android:visibility="visible"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_xuanze4" />
+
+
+        <TextView
+            android:id="@+id/tv_xuanze8"
+            android:layout_width="@dimen/fm_dp_45"
+            android:layout_height="@dimen/fm_dp_45"
+            android:layout_marginLeft="@dimen/fm_dp_16"
+            android:layout_marginTop="@dimen/fm_dp_12.5"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/selector_handwrite_text_bg"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/fm_white"
+            android:textSize="15sp"
+            android:visibility="visible"
+            app:layout_constraintLeft_toRightOf="@+id/tv_xuanze7"
+            app:layout_constraintTop_toBottomOf="@+id/tv_xuanze5" />
+
+
+        <TextView
+            android:id="@+id/tv_xuanze9"
+            android:layout_width="@dimen/fm_dp_45"
+            android:layout_height="@dimen/fm_dp_45"
+            android:layout_marginLeft="@dimen/fm_dp_16"
+            android:layout_marginTop="@dimen/fm_dp_12.5"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/selector_handwrite_text_bg"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/fm_white"
+            android:textSize="15sp"
+            android:visibility="visible"
+            app:layout_constraintLeft_toRightOf="@+id/tv_xuanze8"
+            app:layout_constraintTop_toBottomOf="@+id/tv_xuanze6" />
+
+
+        <TextView
+            android:id="@+id/tv_xuanze10"
+            android:layout_width="@dimen/fm_dp_45"
+            android:layout_height="@dimen/fm_dp_45"
+            android:layout_marginTop="@dimen/fm_dp_12.5"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/selector_handwrite_text_bg"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/fm_white"
+            android:textSize="15sp"
+            android:visibility="visible"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_xuanze7" />
+
+
+        <TextView
+            android:id="@+id/tv_xuanze11"
+            android:layout_width="@dimen/fm_dp_45"
+            android:layout_height="@dimen/fm_dp_45"
+            android:layout_marginLeft="@dimen/fm_dp_16"
+            android:layout_marginTop="@dimen/fm_dp_12.5"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/selector_handwrite_text_bg"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/fm_white"
+            android:textSize="15sp"
+            android:visibility="visible"
+            app:layout_constraintLeft_toRightOf="@+id/tv_xuanze10"
+            app:layout_constraintTop_toBottomOf="@+id/tv_xuanze8" />
+
+
+        <TextView
+            android:id="@+id/tv_xuanze12"
+            android:layout_width="@dimen/fm_dp_45"
+            android:layout_height="@dimen/fm_dp_45"
+            android:layout_marginLeft="@dimen/fm_dp_16"
+            android:layout_marginTop="@dimen/fm_dp_12.5"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/selector_handwrite_text_bg"
+            android:gravity="center"
+            android:maxLines="1"
+            android:textColor="@color/fm_white"
+            android:textSize="15sp"
+            android:visibility="visible"
+            app:layout_constraintLeft_toRightOf="@+id/tv_xuanze11"
+            app:layout_constraintTop_toBottomOf="@+id/tv_xuanze9" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/tv_handwriting"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/fm_dp_28"
+        android:layout_marginBottom="@dimen/fm_dp_15"
+        android:background="@drawable/selector_handwriting_bg"
+        android:gravity="center"
+        android:text="关闭手写"
+        android:textColor="@color/fm_white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/cs_text_layout"
+        app:layout_constraintRight_toRightOf="@+id/cs_text_layout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+

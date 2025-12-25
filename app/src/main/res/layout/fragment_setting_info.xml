@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/yc_img"
+        android:layout_width="@dimen/fm_dp_126.5"
+        android:layout_height="@dimen/fm_dp_26.5"
+        android:layout_marginLeft="@dimen/fm_dp_15"
+        android:layout_marginTop="7.5dp"
+        android:src="@mipmap/img_home_logo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll_persion_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7.5dp"
+        android:layout_marginRight="@dimen/fm_dp_15"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:id="@+id/ll_phone_choose_song"
+            android:layout_width="88dp"
+            android:layout_height="28dp"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/app_shape_personal_center"
+            android:gravity="center">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/app_setting_personal_img" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/at_phone_choose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="4dp"
+                android:text="@string/app_setting_song_txt"
+                android:fontFamily="@font/yc_font"
+                android:textColor="@color/white"
+                android:textSize="@dimen/fm_text_size_12" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_yl_btn"
+            android:layout_width="88dp"
+            android:layout_height="28dp"
+            android:background="@drawable/app_shape_personal_center"
+            android:gravity="center"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_personal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/app_person_img" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_personal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="4dp"
+                android:text="@string/app_setting_personal_txt"
+                android:fontFamily="@font/yc_font"
+                android:textColor="@color/white"
+                android:textSize="@dimen/fm_text_size_12" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_net_work"
+            android:layout_width="88dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="@dimen/fm_dp_12"
+            android:visibility="gone"
+            android:background="@drawable/app_shape_personal_center"
+            android:gravity="center">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_net"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_setting_wifi" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="4dp"
+                android:text="@string/app_setting_personal_net"
+                android:textColor="@color/white"
+                android:textSize="@dimen/fm_text_size_12" />
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</merge>
+

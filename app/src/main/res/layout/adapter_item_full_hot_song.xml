@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cs_bg_btn_show"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/fm_dp_54"
+    android:layout_marginBottom="@dimen/fm_dp_5"
+    android:background="@color/transparent"
+    tools:background="@color/color_333333">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/at_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/item_selector_also_add_song"
+        android:visibility="gone"
+        />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cs_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/fm_dp_15"
+        android:layout_marginEnd="@dimen/fm_dp_10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/collection_song"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_sound_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="marquee"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:maxEms="8"
+            android:fontFamily="@font/yc_font"
+            android:text="每年飞机的撒发大幅度"
+            android:textColor="@color/fm_white"
+            android:textSize="11sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_star_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/yc_font"
+            android:maxEms="7"
+            android:singleLine="true"
+            android:textColor="@color/fm_5CFFFFFF"
+            android:textSize="10sp"
+            app:layout_constraintLeft_toLeftOf="@id/tv_sound_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_sound_name"
+            tools:text="周杰伦" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/at_mv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/fm_dp_5"
+            android:src="@mipmap/img_user_mv"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_star_name"
+            app:layout_constraintLeft_toRightOf="@+id/tv_star_name"
+            app:layout_constraintTop_toTopOf="@+id/tv_star_name" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/collection_song"
+        android:layout_width="@dimen/fm_dp_25"
+        android:layout_height="@dimen/fm_dp_25"
+        android:layout_marginRight="@dimen/fm_dp_15"
+        android:scaleType="centerInside"
+        android:src="@mipmap/img_select_more_set"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btn_collect"
+        android:layout_width="@dimen/fm_dp_35"
+        android:layout_height="@dimen/fm_dp_35"
+        android:layout_marginRight="@dimen/fm_dp_25"
+        android:scaleType="centerInside"
+        android:src="@drawable/state_select_collect_sound"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/iv_top_add"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_top_add"
+        android:layout_width="@dimen/fm_dp_25"
+        android:layout_height="@dimen/fm_dp_25"
+        android:layout_marginRight="@dimen/fm_dp_25"
+        android:background="@drawable/fm_selected_topping"
+        android:singleLine="true"
+        android:text="立即唱"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/collection_song"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

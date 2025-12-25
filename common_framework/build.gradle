@@ -1,0 +1,192 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+
+    // id 'com.alibaba.arouter-register'
+}
+
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+    }
+}
+
+@SuppressWarnings("GrMethodMayBeStatic")
+String getServerBaseUrl() {
+    switch (rootProject.ext.qa_environment) {
+        case rootProject.ext.ENVIRONMENT.TEST:
+            return rootProject.ext.TEST_SERVER_URL
+        default:
+            return rootProject.ext.PROD_SERVER_URL
+    }
+}
+
+@SuppressWarnings("GrMethodMayBeStatic")
+String getQmBaseUrl() {
+    switch (rootProject.ext.qa_environment) {
+        case rootProject.ext.ENVIRONMENT.TEST:
+            return rootProject.ext.TEST_SDK_URL
+        default:
+            return rootProject.ext.PROD_SDK_URL
+    }
+}
+
+@SuppressWarnings("GrMethodMayBeStatic")
+String getApkMarketingUrl() {
+    switch (rootProject.ext.qa_environment) {
+        case rootProject.ext.ENVIRONMENT.TEST:
+            return rootProject.ext.APK_MARKETING_URL
+        default:
+            return rootProject.ext.APK_MARKETING_URL
+    }
+}
+
+
+@SuppressWarnings("GrMethodMayBeStatic")
+String getApkPublicUrl() {
+    switch (rootProject.ext.qa_environment) {
+        case rootProject.ext.ENVIRONMENT.TEST:
+            return rootProject.ext.APK_PUBLIC_URL
+        default:
+            return rootProject.ext.APK_PUBLIC_URL
+    }
+}
+
+
+@SuppressWarnings("GrMethodMayBeStatic")
+String getApkSingUrl() {
+    switch (rootProject.ext.qa_environment) {
+        case rootProject.ext.ENVIRONMENT.TEST:
+            return rootProject.ext.APK_SING_URL
+        default:
+            return rootProject.ext.APK_SING_URL
+    }
+}
+
+
+@SuppressWarnings("GrMethodMayBeStatic")
+String getApkMovieUrl() {
+    switch (rootProject.ext.qa_environment) {
+        case rootProject.ext.ENVIRONMENT.TEST:
+            return rootProject.ext.APK_MOVIE_URL
+        default:
+            return rootProject.ext.APK_MOVIE_URL
+    }
+}
+
+
+android {
+    namespace = "com.common.fragment"
+    compileSdk = 33
+
+    defaultConfig {
+        minSdk = 19
+        targetSdk = 33
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildFeatures {
+            viewBinding true
+        }
+
+        buildConfigField("String", "KTV_SDK_APP_ID", "\"${rootProject.ext.ktvSdkAppId}\"")
+        buildConfigField("String", "KTV_SDK_APP_KEY", "\"${rootProject.ext.ktvSdkAppKey}\"")
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "BASE_URL", "\"${getServerBaseUrl()}\"")
+            buildConfigField("String", "BASE_QM_URL", "\"${getQmBaseUrl()}\"")
+
+
+            buildConfigField("String", "APK_MOVIE_URL", "\"${getApkMovieUrl()}\"")
+            buildConfigField("String", "APK_SING_URL", "\"${getApkSingUrl()}\"")
+
+            buildConfigField("String", "APK_PUBLIC_URL", "\"${getApkPublicUrl()}\"")
+            buildConfigField("String", "APK_MARKETING_URL", "\"${getApkMarketingUrl()}\"")
+
+
+            buildConfigField("Boolean", "IS_DEBUG", "false")
+
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "BASE_URL", "\"${getServerBaseUrl()}\"")
+            buildConfigField("String", "BASE_QM_URL", "\"${getQmBaseUrl()}\"")
+
+
+            buildConfigField("String", "APK_MOVIE_URL", "\"${getApkMovieUrl()}\"")
+            buildConfigField("String", "APK_SING_URL", "\"${getApkSingUrl()}\"")
+
+            buildConfigField("String", "APK_PUBLIC_URL", "\"${getApkPublicUrl()}\"")
+            buildConfigField("String", "APK_MARKETING_URL", "\"${getApkMarketingUrl()}\"")
+
+
+            buildConfigField("Boolean", "IS_DEBUG", "true")
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    resourcePrefix = "fm_"
+}
+
+/*configurations.all {
+    resolutionStrategy {
+        force 'com.google.android.exoplayer:exoplayer-core:2.14.0'
+        force 'com.google.android.exoplayer:exoplayer-hls:2.12.2'
+    }
+}*/
+
+
+dependencies {
+    api(fmlibs.bundles.android.base)
+    api(fmlibs.bundles.androidx.lifecycle)
+    api(fmlibs.bundles.kotlin.coil)
+    api(fmlibs.bundles.kotlin.coroutines)
+    api(fmlibs.mmkv.static)
+    api(fmlibs.indicator)
+    api fmlibs.bundles.network.fm
+    api(fmlibs.blankj)
+    api(fmlibs.bundles.viewbinding)
+    testImplementation fmlibs.bundles.android.test
+    api(fmlibs.bundles.immersionbar)
+    testImplementation fmlibs.bundles.test.junit
+    api fmlibs.android.auto
+    api fmlibs.android.crash
+    api fmlibs.android.websocket
+    api fmlibs.google.zxing
+    api fmlibs.android.retrofitmanager
+
+    //加载json格式动画
+    api "com.airbnb.android:lottie:4.2.2"
+
+    //刷新控件
+    api 'com.scwang.smart:refresh-layout-kernel:2.0.1'      //核心必须依赖
+    api 'com.scwang.smart:refresh-header-classics:2.0.1'    //经典刷新头
+    api 'com.scwang.smart:refresh-footer-classics:2.0.1'    //经典加载
+
+    api "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4"
+    // glide
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+    api 'com.github.bumptech.glide:glide:4.12.0'
+    api 'com.github.Justson.AgentWeb:agentweb-core:v5.0.0-alpha.1-androidx' // (必选)
+    api 'com.github.Justson.AgentWeb:agentweb-filechooser:v5.0.0-alpha.1-androidx' // (可选)
+    api 'com.github.Justson:Downloader:v5.0.0-androidx' // (可选)
+    //jsbridge
+    api 'com.github.lzyzsd:jsbridge:1.0.4'
+    //腾讯PAG动画插件
+    api 'com.tencent.tav:libpag:3.2.7.34'
+    //DataStore
+    implementation 'androidx.datastore:datastore-preferences:1.0.0'
+    implementation 'androidx.datastore:datastore-preferences-core:1.0.0'
+    api 'com.github.XuDeveloper:XPopupWindow:1.0.1'
+    api 'io.github.hokofly:hoko-blur:1.5.3'
+    //log
+    api 'com.orhanobut:logger:2.2.0'
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="app_primary_color">#7FB8FF</color>
+
+   <!-- magicindicator-->
+    <color name="app_c_818284">#818284</color>
+    <color name="app_c_3c3c3c">#3C3C3C</color>
+    <color name="app_c_47c986">#47C986</color>
+
+
+    <color name="app_c_401F0B">#401F0B</color>
+
+    <color name="app_choose_5D2A00">#5D2A00</color>
+
+    <color name="app_choose_no_FFE7AE">#FFE7AE</color>
+    <color name="app_99ffffff">#99FFFFFF</color>
+    <color name="app_C64EFF">#C64EFF</color>
+    <color name="app_CCFFFFFF">#CCFFFFFF</color>
+    <color name="app_33FFFFFF">#33FFFFFF</color>
+    <color name="color_5D2A00">#5D2A00</color>
+    <color name="color_FFE7AE">#FFE7AE</color>
+    <color name="color_000000">#000000</color>
+    <color name="color_search_keybox">#FFF300</color>
+</resources>

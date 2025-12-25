@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="#231654">
+
+
+    <RadioGroup
+        android:id="@+id/rg_menu"
+        android:layout_width="@dimen/fm_dp_149"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/rb_vip"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fm_dp_40"
+            android:layout_marginTop="22dp"
+            android:background="@drawable/selector_personal_menu_bg"
+            android:button="@null"
+            android:drawableStart="@drawable/fm_selector_person_center_qy"
+            android:gravity="center"
+            android:paddingStart="@dimen/fm_dp_38"
+            android:paddingEnd="@dimen/fm_dp_21"
+            android:text="个人权益"
+            android:fontFamily="@font/yc_font"
+            android:textColor="@color/fm_white"
+            tools:checked="true" />
+
+
+        <RadioButton
+            android:id="@+id/rb_collect"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fm_dp_40"
+            android:layout_marginTop="26dp"
+            android:background="@drawable/selector_personal_menu_bg"
+            android:button="@null"
+            android:drawableStart="@drawable/fm_selector_person_center_sc"
+            android:gravity="center"
+            android:paddingStart="@dimen/fm_dp_38"
+            android:paddingEnd="@dimen/fm_dp_21"
+            android:text="收藏列表"
+            android:fontFamily="@font/yc_font"
+            android:textColor="@color/fm_white" />
+
+        <RadioButton
+            android:id="@+id/rb_history"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fm_dp_40"
+            android:layout_marginTop="26dp"
+             android:background="@drawable/selector_personal_menu_bg"
+            android:button="@null"
+            android:drawableStart="@drawable/fm_selector_person_center_ls"
+            android:gravity="center"
+            android:paddingStart="@dimen/fm_dp_38"
+            android:paddingEnd="@dimen/fm_dp_21"
+            android:text="历史记录"
+            android:fontFamily="@font/yc_font"
+            android:textColor="@color/fm_white" />
+
+        <RadioButton
+            android:id="@+id/rb_about"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fm_dp_40"
+            android:layout_marginTop="26dp"
+             android:background="@drawable/selector_personal_menu_bg"
+            android:button="@null"
+            android:drawableStart="@drawable/fm_selector_person_center_gy"
+            android:gravity="center"
+            android:paddingStart="@dimen/fm_dp_38"
+            android:paddingEnd="@dimen/fm_dp_21"
+            android:text="关于本机"
+            android:fontFamily="@font/yc_font"
+            android:textColor="@color/fm_white" />
+
+
+        <RadioButton
+            android:id="@+id/rb_system_set"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fm_dp_40"
+            android:layout_marginTop="26dp"
+            android:background="@drawable/selector_personal_menu_bg"
+            android:button="@null"
+            android:textStyle=""
+            android:drawableStart="@drawable/fm_selector_person_system"
+            android:gravity="center"
+            android:paddingStart="@dimen/fm_dp_38"
+            android:paddingEnd="@dimen/fm_dp_21"
+            android:text="系统设置"
+            android:fontFamily="@font/yc_font"
+            android:textColor="@color/fm_white" />
+    </RadioGroup>
+
+    <FrameLayout
+        android:id="@+id/fl_choose_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/rg_menu"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_return"
+        android:layout_width="@dimen/fm_dp_78"
+        android:layout_height="@dimen/fm_dp_28"
+        android:layout_marginEnd="@dimen/fm_dp_15"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/common_ff05b1a_back_bg"
+        android:drawableStart="@mipmap/img_back_common_page"
+        android:gravity="center"
+        android:paddingStart="@dimen/fm_dp_14"
+        android:paddingEnd="@dimen/fm_dp_12"
+        android:text="返回"
+        android:fontFamily="@font/yc_font"
+        android:textColor="@color/white"
+        android:textSize="@dimen/fm_text_size_13"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

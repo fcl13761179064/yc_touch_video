@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/fm_dp_5"
+    android:paddingLeft="@dimen/fm_dp_15"
+    android:paddingTop="@dimen/fm_dp_15">
+
+    <CheckedTextView
+        android:layout_width="@dimen/fm_dp_30"
+        android:layout_height="10dp"
+        android:background="@drawable/selector_movie_rb_incator2"
+        android:checked="true"
+        app:layout_constraintBottom_toBottomOf="@+id/at_seach_result"
+        app:layout_constraintLeft_toLeftOf="@+id/at_seach_result"
+        app:layout_constraintRight_toRightOf="@+id/at_seach_result" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/at_seach_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="歌曲"
+        android:textColor="@color/fm_white"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

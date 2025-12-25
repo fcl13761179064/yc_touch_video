@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.lucky.sound">
+
+
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 对于 Android 12.0 及以上设备 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-feature android:name="android.hardware.type.display" android:required="false" />
+
+
+
+   <!-- 显示系统窗口权限-->
+  <!--  <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />-->
+
+
+    <application
+        android:name="com.lucky.sound.main.base.MyAppclication"
+        android:allowBackup="true"
+        android:persistent="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/img_app_logo"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config_debug"
+        android:roundIcon="@mipmap/img_app_logo"
+        android:supportsRtl="true"
+        android:theme="@style/fm_app_theme"
+        tools:targetApi="31"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:name,android:theme">
+
+        <!--允许绘制到oppo、vivo刘海屏机型的刘海区域 -->
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="1.8" />
+        <!-- 允许绘制到华为刘海屏机型的刘海区域 -->
+        <meta-data
+            android:name="android.notch_support"
+            android:value="true" />
+        <!-- 允许绘制到小米刘海屏机型的刘海区域 -->
+        <meta-data
+            android:name="notch.config"
+            android:value="landscape" />
+
+        <activity
+            android:name="com.user.login.ui.splash.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/fm_splashTheme">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                 <!--板子自己进入应用-->
+       <!--       <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.MONKEY" />-->
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.user.login.ui.splash.SplashAgreeActivity"
+            android:exported="true"
+            android:resizeableActivity="false"
+            android:screenOrientation="landscape"
+            android:theme="@style/fm_app_theme" />
+
+        <activity android:name=".main.ui.HomeActivity"
+            android:screenOrientation="landscape"
+            android:exported="true"
+            android:resizeableActivity="false"
+            android:launchMode="singleTask"
+           />
+
+        <activity android:name=".main.ui.TwoScreenActivity"
+            android:screenOrientation="landscape"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:resizeableActivity="true"
+           />
+
+        <receiver android:name=".main.widget.HdmiReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.HDMI_PLUGGED" />
+            </intent-filter>
+        </receiver>
+
+       <!-- <receiver android:name=".main.widget.AppStartUp"
+            android:enabled="true"
+            android:exported="true"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.HDMISTATUS_CHANGED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>-->
+    </application>
+
+
+
+</manifest>

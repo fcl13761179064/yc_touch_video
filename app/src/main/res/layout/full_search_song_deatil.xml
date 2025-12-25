@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cs_song_detail_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ai_star_head"
+        android:layout_width="@dimen/fm_dp_28"
+        android:layout_height="@dimen/fm_dp_28"
+        android:layout_marginLeft="@dimen/fm_dp_15"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/at_star_name"
+        app:layout_constraintBottom_toBottomOf="@+id/at_star_name"
+        app:shapeAppearanceOverlay="@style/fm_CircleStyle" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/at_star_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8.5dp"
+        android:text=""
+        android:fontFamily="@font/yc_font"
+        android:layout_marginTop="@dimen/fm_dp_21"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:maxEms="6"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toRightOf="@+id/ai_star_head"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_return"
+        android:layout_width="@dimen/fm_dp_75"
+        android:layout_height="@dimen/fm_dp_28"
+        android:layout_marginRight="@dimen/fm_dp_15"
+        android:background="@drawable/common_ff05b1a_back_bg"
+        android:drawableStart="@mipmap/img_back_common_page"
+        android:gravity="center"
+        android:paddingStart="@dimen/fm_dp_14"
+        android:paddingEnd="@dimen/fm_dp_12"
+        android:text="返回"
+        android:fontFamily="@font/yc_font"
+        android:textColor="@color/white"
+        android:textSize="@dimen/fm_text_size_13"
+        app:layout_constraintBottom_toBottomOf="@+id/at_star_name"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/at_star_name" />
+
+    <com.common.framework.view.RefreshLayout
+        android:id="@+id/refreshView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/fm_dp_5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/at_star_name">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycleview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/fm_dp_10"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="7"
+            tools:listitem="@layout/adapter_item_full_hot_song" />
+    </com.common.framework.view.RefreshLayout>
+
+    <include
+        android:id="@+id/layout_loading"
+        layout="@layout/common_progress_loading"
+        android:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

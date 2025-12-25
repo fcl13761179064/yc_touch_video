@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="fm_transparent">#00FFFFFF</color>
+    <color name="fm_color_333333">#333333</color>
+    <color name="fm_color_666666">#666666</color>
+    <color name="fm_color_fffff7fc">#FFF7FC</color>
+    <color name="fm_00000000_transparent">#00000000</color>
+    <color name="fm_color_1aec2d30">#1AEC2D30</color>
+    <color name="fm_color_3C3C3C">#3C3C3C</color>
+
+    <color name="fm_white">#FFFFFF</color>
+
+    <!-- magicindicator-->
+    <color name="fm_color_1affffff">#1affffff</color>
+    <color name="fm_color_66000000">#66000000</color>
+    <color name="fm_color_ffc64eff">#ffc64eff</color>
+    <color name="fm_color_ff5128b3">#ff5128b3</color>
+    <color name="fm_color_3548ff">#ff3548ff</color>
+    <color name="fm_color_33ffffff">#12ffffff</color>
+    <color name="fm_color_ff000000">#FF000000</color>
+    <!-- magicindicator-->
+    <color name="fm_c_818284">#818284</color>
+    <color name="fm_c_3c3c3c">#3C3C3C</color>
+    <color name="fm_60_white">#99FFFFFF</color>
+
+
+    <color name="fm_F05B1A_color">#F05B1A</color>
+
+    <color name="fm_401F0B_color">#401F0B</color>
+
+    <color name="fm_60_ffffff_color">#99ffffff</color>
+
+    <color name="fm_222_color">#49222222</color>
+    <!--  白色的60%-->
+    <color name="fm_99FFFFFF">#99FFFFFF</color>
+    <!--  白色的80%-->
+    <color name="fm_ccffffff">#CCFFFFFF</color>
+    <!--  白色的5%-->
+    <color name="fm_80FFFFFF">#0DFFFFFF</color>
+    <!--  白色的4%-->
+    <color name="fm_0AFFFFFF">#0AFFFFFF</color>
+    <!--  白色的24%-->
+    <color name="fm_3DFFFFFF">#3DFFFFFF</color>
+    <!--  白色的20%-->
+    <color name="fm_33FFFFFF">#33FFFFFF</color>
+    <!--  白色的30%-->
+    <color name="fm_4DFFFFFF">#4DFFFFFF</color>
+    <!--  白色的10%-->
+    <color name="fm_1AFFFFFF">#1AFFFFFF</color>
+    <!--  白色的8%-->
+    <color name="fm_14FFFFFF">#14FFFFFF</color>
+    <!--  白色的36%-->
+    <color name="fm_5CFFFFFF">#5CFFFFFF</color>
+    <color name="fm_33000000">#33000000</color>
+    <!--黑色80%-->
+    <color name="fm_cc000000">#CC000000</color>
+    <!--黑色0%-->
+    <color name="fm_00000000">#00000000</color>
+    <!--黑色10%-->
+    <color name="fm_1A000000">#1A000000</color>
+
+    <color name="fm_e056ff">#E056FF</color>
+    <color name="fm_99E056FF">#99E056FF</color>
+    <color name="fm_0ffffff">#0fffff</color>
+</resources>

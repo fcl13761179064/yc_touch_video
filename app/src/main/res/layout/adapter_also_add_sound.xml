@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/fm_dp_7">
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="01"
+        android:textColor="@color/fm_transparent"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_sound_name"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_sound_name"
+      />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_sound_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="只要为你活一天"
+        android:gravity="center"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:maxEms="8"
+        android:layout_marginLeft="@dimen/fm_dp_11"
+        android:textColor="@color/fm_transparent"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toRightOf="@+id/tv_num"
+        app:layout_constraintTop_toTopOf="parent"
+       />
+</androidx.constraintlayout.widget.ConstraintLayout>

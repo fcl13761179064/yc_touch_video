@@ -1,0 +1,18 @@
+<resources>
+
+    <string name="net_register_require">Log in failed, please try again</string>
+    <string name="net_system_error">System Error</string>
+    <string name="net_size_exceeded">Sorry, Size Exceeded</string>
+    <string name="net_insufficient_balance">Insufficient Balance</string>
+    <string name="net_too_frequently">Visited too Frequently</string>
+    <string name="net_repeated_submit">Repeated Submit</string>
+    <string name="net_format_error">Sorry, Format Error</string>
+    <string name="net_sending_message_failed">Sending message failed</string>
+    <string name="net_sending_email_failed">Sending email failed</string>
+    <string name="net_account_already_existed">Account already existed</string>
+    <string name="net_code_error">Code Error</string>
+    <string name="net_password_error">Password Error</string>
+    <string name="net_friend_request_has_been_applied">Friend request has been applied</string>
+    <string name="net_already_friend">You have added the user as friend</string>
+    <string name="net_is_in_block_list">You were blocked by the user</string>
+</resources>

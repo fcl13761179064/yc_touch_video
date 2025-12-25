@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/fm_dp_15"
+  >
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/right_img_recycleview"
+        android:layout_width="@dimen/fm_dp_166"
+        android:layout_height="0dp"
+        android:scrollbars="vertical"
+        android:fadeScrollbars="false"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:layout_marginRight="@dimen/fm_dp_15"
+        android:scrollbarSize="5dp"
+        android:scrollbarThumbVertical="@drawable/lg_scrollbar_custom"
+        android:scrollbarStyle="outsideOverlay"
+        app:layout_constraintBottom_toBottomOf="@+id/child_recycleview"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_child_title_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="“60后怀旧老歌”"
+        android:textSize="15sp"
+        android:fontFamily="@font/yc_font"
+        android:textColor="@color/fm_color_ffc64eff"
+        android:layout_marginTop="@dimen/fm_dp_5.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/child_recycleview"
+            android:layout_width="@dimen/fm_dp_394"
+            android:layout_height="@dimen/fm_dp_250"
+            app:layout_constraintTop_toBottomOf="@+id/tv_child_title_desc"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginTop="@dimen/fm_dp_10"
+            android:layout_marginRight="@dimen/fm_dp_15.5"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="5"
+            tools:listitem="@layout/adapter_item_sound_info" />
+
+    <include
+        android:id="@+id/bottom_opera_layout"
+        android:layout_height="@dimen/fm_dp_53"
+        android:layout_width="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        layout="@layout/include_common_bottom_opera_layout"
+        app:layout_constraintRight_toRightOf="@+id/child_recycleview"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
+

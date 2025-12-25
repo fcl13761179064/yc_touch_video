@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_type"
+    android:layout_width="@dimen/fm_dp_161.5"
+    android:layout_height="@dimen/fm_dp_282"
+    tools:background="#03A9F4">
+
+    <TextView
+        android:id="@+id/tv_filter"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/fm_dp_28"
+        android:background="@drawable/shape_bg_movie_fliter_in"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="筛选"
+        android:textColor="#ffffffff"
+        android:textSize="13sp"
+        android:fontFamily="@font/yc_font"
+        app:layout_constraintEnd_toStartOf="@id/tv_search"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_search"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/fm_dp_28"
+        android:background="@drawable/shape_bg_movie_search"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="搜索"
+        android:fontFamily="@font/yc_font"
+        android:textColor="#ffffffff"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_filter"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/rg_filter"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fm_dp_12.5"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/tv_filter">
+
+        <RadioButton
+            android:id="@+id/rb_type"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:button="@null"
+            android:gravity="center"
+            android:fontFamily="@font/yc_font"
+            android:text="类型"
+            android:textColor="@drawable/selector_movie_filter_rb_text"
+            android:textSize="10sp" />
+
+        <View
+            android:id="@+id/view_line1"
+            android:layout_width="@dimen/fm_dp_0.5"
+            android:layout_height="match_parent"
+            android:background="#1AFFFFFF"
+            android:visibility="gone" />
+
+        <RadioButton
+            android:id="@+id/rb_area"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:button="@null"
+            android:gravity="center"
+            android:fontFamily="@font/yc_font"
+            android:text="地区"
+            android:textColor="@drawable/selector_movie_filter_rb_text"
+            android:textSize="10sp"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/view_line2"
+            android:layout_width="@dimen/fm_dp_0.5"
+            android:layout_height="match_parent"
+            android:background="#1AFFFFFF"
+            android:visibility="gone" />
+
+        <RadioButton
+            android:id="@+id/rb_year"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:button="@null"
+            android:fontFamily="@font/yc_font"
+            android:gravity="center"
+            android:text="年份"
+            android:textColor="@drawable/selector_movie_filter_rb_text"
+            android:textSize="10sp"
+            android:visibility="gone" />
+    </RadioGroup>
+
+    <View
+        android:id="@+id/view_bg"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/fm_dp_10"
+        android:background="@drawable/shape_bg_movie_fliter_list"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rg_filter" />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fm_dp_0.5"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="@dimen/fm_dp_70"
+        android:background="#0DFFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_filter"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/fm_dp_2.5"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@id/line"
+        app:layout_constraintTop_toTopOf="@id/view_bg"
+        tools:itemCount="3"
+        tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:listitem="@layout/item_movie_filter" />
+
+    <com.google.android.flexbox.FlexboxLayout
+        android:id="@+id/fbl_filter"
+        android:layout_width="match_parent"
+        app:flexWrap="wrap"
+        android:layout_height="@dimen/fm_dp_70"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
